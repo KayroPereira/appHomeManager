@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".doorLockActivity"></activity>
+        <activity android:name=".WaterTankActivity"></activity>
+        <activity android:name=".doorLockActivity" />
         <activity
             android:name=".KitchenActivity"
             android:screenOrientation="portrait" />
