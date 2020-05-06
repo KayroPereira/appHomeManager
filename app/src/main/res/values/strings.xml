@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">appHomeManagerV14</string>
+    <string name="networkName">HomeManager</string>
+
+    <string name="titleLiving">Living Room</string>
+    <string name="titleKitchen">Kitchen</string>
+    <string name="titleBedRoom1">BedRoom - 1</string>
+    <string name="titleBedRoom2">BebRoom - 2</string>
+    <string name="titleBedRoom3">BebRoom - 3</string>
+    <string name="titleBedRoom4">BebRoom - 4</string>
+    <string name="titleConfiguration">Configuration</string>
+    <string name="titleDoorLock">Door Lock</string>
+    <string name="titleConfigCard">Cadastrar Cartão</string>
+
+    <string name="login">Login</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="enviar">Enviar</string>
+    <string name="voltar">Voltar</string>
+    <string name="sair">Sair</string>
+    <string name="cadastro">Cadastra-se</string>
+    <string name="btnetwork">Configuração</string>
+
+    <string name="dgLogin">Digite o seu e-mail</string>
+    <string name="dgPassword">Digite sua senha</string>
+    <string name="dgConfirmePassword">Confirmar senha</string>
+
+    <string name="fvssid">Favor inserir o SSID</string>
+    <string name="fvEmail">Favor inserir seu e-mail</string>
+    <string name="fvSenha">Favor inserir sua senha</string>
+    <string name="fvpassnetword">Favor inserir a senha da rede</string>
+    <string name="fvcSenha">Favor inserir sua senha novamente</string>
+
+    <string name="entrada">Entrada</string>
+    <string name="sala">Sala</string>
+    <string name="quarto">Quarto</string>
+    <string name="banheiro">Banheiro</string>
+    <string name="cozinha">Cozinha</string>
+    <string name="quintal">Quintal</string>
+
+    <string name="senhaError">Senhas diferentes</string>
+    <string name="registroError">Erro ao cadastrar usuário</string>
+    <string name="ssidErrorLength">SSID contém mais de 35 caracteres</string>
+    <string name="passwordErrorLength">A senha contém mais de 35 caracteres</string>
+    <string name="networkError">Erro ao configurar a rede</string>
+
+    <string name="registroOk">Registro realizado com sucesso</string>
+    <string name="networkOk">Rede configurada com sucesso</string>
+
+    <string name="light">Light</string>
+    <string name="power">Power</string>
+    <string name="ssid">SSID:</string>
+    <string name="unidentified">unidentified</string>
+
+
+</resources>
