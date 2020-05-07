@@ -53,7 +53,10 @@
 
     <!-- water tank -->
     <string name="endereco">Endereço</string>
+    <string name="nivel">Nível</string>
     <string name="caixa">Caixa</string>
+    <string name="sup">Superior</string>
+    <string name="inf">Inferior</string>
 
 
 </resources>

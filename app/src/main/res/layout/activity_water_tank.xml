@@ -11,102 +11,182 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="248dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="148dp"
-                android:layout_height="50dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="261dp"
-                android:fontFamily="@font/abeezee"
-                android:text="@string/endereco"
-                android:textColor="?android:attr/colorButtonNormal"
-                android:textSize="26dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="248dp">
 
-            <TextView
-                android:id="@+id/tvBox1"
-                android:layout_width="98dp"
-                android:layout_height="35dp"
-                android:layout_below="@+id/textView"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="35dp"
-                android:fontFamily="@font/abeezee"
-                android:text="@string/caixa"
-                android:textColor="?android:attr/colorButtonNormal"
-                android:textSize="26dp" />
+                <TextView
+                    android:id="@+id/tvBoxAddress"
+                    android:layout_width="148dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="261dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/endereco"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp" />
 
-            <TextView
-                android:id="@+id/tvBox2"
-                android:layout_width="98dp"
-                android:layout_height="35dp"
-                android:layout_below="@+id/tvBox1"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/abeezee"
-                android:text="@string/caixa"
-                android:textColor="?android:attr/colorButtonNormal"
-                android:textSize="26dp" />
+                <TextView
+                    android:id="@+id/tvBox1"
+                    android:layout_width="98dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/tvBoxAddress"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/caixa"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp" />
 
-            <TextView
-                android:id="@+id/tvBox3"
-                android:layout_width="98dp"
-                android:layout_height="35dp"
-                android:layout_below="@+id/tvBox2"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/abeezee"
-                android:text="@string/caixa"
-                android:textColor="?android:attr/colorButtonNormal"
-                android:textSize="26dp" />
+                <TextView
+                    android:id="@+id/tvBox2"
+                    android:layout_width="98dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/tvBox1"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/caixa"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp" />
 
-            <EditText
-                android:id="@+id/etBox1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="40dp"
-                android:layout_toEndOf="@+id/tvBox1"
-                android:ems="10"
-                android:inputType="textPersonName" />
+                <TextView
+                    android:id="@+id/tvBox3"
+                    android:layout_width="98dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/tvBox2"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/caixa"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp" />
 
-            <EditText
-                android:id="@+id/etBox2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/etBox1"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="40dp"
-                android:layout_toEndOf="@+id/tvBox1"
-                android:ems="10"
-                android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/etBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvBoxAddress"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toEndOf="@+id/tvBox1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/etBox3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/etBox2"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="40dp"
-                android:layout_toEndOf="@+id/tvBox1"
-                android:ems="10"
-                android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/etBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etBox1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toEndOf="@+id/tvBox1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
 
-        </RelativeLayout>
+                <EditText
+                    android:id="@+id/etBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etBox2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toEndOf="@+id/tvBox1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="356dp">
+
+                <TextView
+                    android:id="@+id/tvBoxLevels"
+                    android:layout_width="148dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="255dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/nivel"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp" />
+
+                <TextView
+                    android:id="@+id/tvBoxLH"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/tvBoxLevels"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/sup"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp" />
+
+                <EditText
+                    android:id="@+id/etBoxLH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvBoxLevels"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toEndOf="@+id/tvBox1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/tvBoxLL"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/tvBoxLH"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/inf"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp" />
+
+                <EditText
+                    android:id="@+id/etBoxLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etBoxLH"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toEndOf="@+id/tvBox1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+            </RelativeLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
