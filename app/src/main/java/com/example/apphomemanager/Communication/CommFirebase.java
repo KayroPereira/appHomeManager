@@ -1,9 +1,15 @@
 package com.example.apphomemanager.Communication;
 
+import android.util.Log;
+
+import androidx.core.util.LogWriter;
+
 import com.example.apphomemanager.GeneralUse.ComponentStatus;
+import com.example.apphomemanager.GeneralUse.WaterTankData;
 import com.google.firebase.database.DataSnapshot;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CommFirebase {
 
@@ -52,5 +58,42 @@ public class CommFirebase {
         }
 
         return outPuts;
+    }
+
+    public WaterTankData getDataWaterTank(DataSnapshot dataSnapshot, String mode){
+        WaterTankData data = new WaterTankData();
+
+        //(abx1, abx2, abx30 ou (ci), err, fcp, level, p1s, set{LH, LL}, sp1
+
+        DataSnapshot path = dataSnapshot.child(mode);
+
+        try {
+            data.setErr(Integer.parseInt(path.child("err").getValue().toString()));
+            data.setFcp(Integer.parseInt(path.child("fcp").getValue().toString()));
+            data.setLevel(Integer.parseInt(path.child("level").getValue().toString()));
+            data.setLl(Integer.parseInt(path.child("set").child("LL").getValue().toString()));
+            data.setLh(Integer.parseInt(path.child("set").child("LH").getValue().toString()));
+
+            switch(mode){
+                case "cix1":         //cisterna
+                    data.setAddress(new String[]{path.child("abx1").getValue().toString(),
+                            path.child("abx2").getValue().toString(),
+                            path.child("abx3").getValue().toString()});
+                    data.setSx1(Integer.parseInt(path.child("sp1").getValue().toString()));
+                    data.setX1s(Integer.parseInt(path.child("p1s").getValue().toString()));
+                    break;
+
+                case "cx1":         //caixa
+                    data.setAddress(new String[]{path.child("ci").getValue().toString(), "", ""});
+                    data.setSx1(Integer.parseInt(path.child("sv1").getValue().toString()));
+                    data.setX1s(Integer.parseInt(path.child("v1s").getValue().toString()));
+                    break;
+            }
+
+        }catch(Exception ex){
+            Log.w("Firebase", "Erro no download / conversão dos dados firebase");
+        }
+
+        return data;
     }
 }

@@ -51,5 +51,9 @@
     <string name="ssid">SSID:</string>
     <string name="unidentified">unidentified</string>
 
+    <!-- water tank -->
+    <string name="endereco">Endereço</string>
+    <string name="caixa">Caixa</string>
+
 
 </resources>

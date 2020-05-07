@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //remover
-                Intent it = new Intent(MainActivity.this, DashBoardActivity.class);
+                //Intent it = new Intent(MainActivity.this, DashBoardActivity.class);
+                Intent it = new Intent(MainActivity.this, WaterTankActivity.class);
                 startActivity(it);
 
                 //habilitar
