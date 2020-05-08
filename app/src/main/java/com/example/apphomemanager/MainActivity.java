@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+//import com.example.apphomemanager.GeneralUse.ConstantsApp;
+import com.example.apphomemanager.GeneralUse.ConstantsApp;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -70,7 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
                 //remover
                 //Intent it = new Intent(MainActivity.this, DashBoardActivity.class);
+                //Bundle bundle = new Bundle();
+                //bundle.putInt("mode", new ConstantsApp().getCISTERN());
                 Intent it = new Intent(MainActivity.this, WaterTankActivity.class);
+                //it.putExtra("mode", new ConstantsApp().getCISTERN());
+                it.putExtra("mode", new ConstantsApp().getWATER_TANK());
+                //it.putExtra("mode", 0);
                 startActivity(it);
 
                 //habilitar

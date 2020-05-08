@@ -4,14 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.apphomemanager.Communication.CommFirebase;
+import com.example.apphomemanager.GeneralUse.ConstantsApp;
 import com.example.apphomemanager.GeneralUse.WaterTankData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,10 +24,28 @@ public class WaterTankActivity extends AppCompatActivity {
     private TextView tvBox2;
     private TextView tvBox3;
 
+    private EditText etBox1;
+    private EditText etBox2;
+    private EditText etBox3;
+    private EditText etBoxLH;
+    private EditText etBoxLL;
+
+    private Button btBoxSend;
+
+    private int mode;
+
+    final ConstantsApp constants = new ConstantsApp();
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference();
 
     final DatabaseReference dbOutStatus = reference;
+
+    private void sendDataInt(DatabaseReference reference, String path, int value){
+        //dbOutStatus.child("living").child("power").child("out4").setValue(action ? 1 : 0);
+        //dbOutStatus.child("kitchen/l/o1").setValue(8);
+        reference.child(path).setValue(value);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +56,36 @@ public class WaterTankActivity extends AppCompatActivity {
         tvBox2 = (TextView) findViewById(R.id.tvBox2);
         tvBox3 = (TextView) findViewById(R.id.tvBox3);
 
-        tvBox1.setText(getString(R.string.caixa) + " 1");
-        tvBox2.setText(getString(R.string.caixa) + " 2");
-        tvBox3.setText(getString(R.string.caixa) + " 3");
+        etBox1 = (EditText) findViewById(R.id.etBox1);
+        etBox2 = (EditText) findViewById(R.id.etBox2);
+        etBox3 = (EditText) findViewById(R.id.etBox3);
+        etBoxLH = (EditText) findViewById(R.id.etBoxLH);
+        etBoxLL = (EditText) findViewById(R.id.etBoxLL);
+
+        btBoxSend = (Button) findViewById(R.id.btBoxSend);
+
+        mode = getIntent().getExtras().getInt("mode");
+        startComponents(mode);
+
+        btBoxSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //dbOutStatus.child("kitchen/l/o1").setValue(8);
+                sendDataInt(dbOutStatus, "kitchen/l/o1", 6);
+
+            }
+        });
 
         dbOutStatus.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                WaterTankData data = new CommFirebase().getDataWaterTank(dataSnapshot, "cix1");
-                WaterTankData data1 = new CommFirebase().getDataWaterTank(dataSnapshot, "cx1");
+                WaterTankData dataCistern = new CommFirebase().getDataWaterTank(dataSnapshot, constants.getPathReservoir()[mode]);
 
-                Log.w("Firebase", database.toString());
+                updateData(dataCistern, mode);
+
+                //Log.w("Firebase", database.toString());
                 /*
                 statusComponent = new CommFirebase().getOutPut(dataSnapshot, "cix1");
 
@@ -128,5 +163,50 @@ public class WaterTankActivity extends AppCompatActivity {
 
             }
         });
+    }
+    //26/04 - 1150
+
+    void updateData (WaterTankData data, int mode){
+
+        etBox1.setText(data.getAddress()[0]);
+        etBoxLH.setText(data.getLh()+"");
+        etBoxLL.setText(data.getLl()+"");
+
+        switch(mode){
+            case 0:
+                etBox2.setText(data.getAddress()[1]);
+                etBox3.setText(data.getAddress()[2]);
+                break;
+
+            case 1:
+                break;
+        }
+    }
+
+    void startComponents(int mode){
+
+        etBox1.setEnabled(true);
+
+        switch(mode){
+            case 0:
+                tvBox1.setText(getString(R.string.caixa) + " 1");
+                tvBox2.setText(getString(R.string.caixa) + " 2");
+                tvBox3.setText(getString(R.string.caixa) + " 3");
+
+                tvBox2.setVisibility(View.VISIBLE);
+                tvBox3.setVisibility(View.VISIBLE);
+                etBox2.setVisibility(View.VISIBLE);
+                etBox3.setVisibility(View.VISIBLE);
+                break;
+
+            case 1:
+                tvBox1.setText(getString(R.string.cisterna));
+
+                etBox2.setVisibility(View.GONE);
+                etBox3.setVisibility(View.GONE);
+                tvBox2.setVisibility(View.GONE);
+                tvBox3.setVisibility(View.GONE);
+                break;
+        }
     }
 }

@@ -55,6 +55,7 @@
     <string name="endereco">Endereço</string>
     <string name="nivel">Nível</string>
     <string name="caixa">Caixa</string>
+    <string name="cisterna">Cisterna</string>
     <string name="sup">Superior</string>
     <string name="inf">Inferior</string>
 

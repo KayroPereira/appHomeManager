@@ -37,7 +37,7 @@
 
                 <TextView
                     android:id="@+id/tvBox1"
-                    android:layout_width="98dp"
+                    android:layout_width="105dp"
                     android:layout_height="35dp"
                     android:layout_below="@+id/tvBoxAddress"
                     android:layout_alignParentStart="true"
@@ -50,7 +50,7 @@
 
                 <TextView
                     android:id="@+id/tvBox2"
-                    android:layout_width="98dp"
+                    android:layout_width="105dp"
                     android:layout_height="35dp"
                     android:layout_below="@+id/tvBox1"
                     android:layout_alignParentStart="true"
@@ -63,7 +63,7 @@
 
                 <TextView
                     android:id="@+id/tvBox3"
-                    android:layout_width="98dp"
+                    android:layout_width="105dp"
                     android:layout_height="35dp"
                     android:layout_below="@+id/tvBox2"
                     android:layout_alignParentStart="true"
@@ -85,7 +85,8 @@
                     android:layout_marginEnd="40dp"
                     android:layout_toEndOf="@+id/tvBox1"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/etBox2"
@@ -98,7 +99,8 @@
                     android:layout_marginEnd="40dp"
                     android:layout_toEndOf="@+id/tvBox1"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/etBox3"
@@ -111,7 +113,8 @@
                     android:layout_marginEnd="40dp"
                     android:layout_toEndOf="@+id/tvBox1"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
 
             </RelativeLayout>
 
@@ -158,7 +161,8 @@
                     android:layout_marginEnd="40dp"
                     android:layout_toEndOf="@+id/tvBox1"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:numeric="integer" />
 
                 <TextView
                     android:id="@+id/tvBoxLL"
@@ -184,7 +188,18 @@
                     android:layout_marginEnd="40dp"
                     android:layout_toEndOf="@+id/tvBox1"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:numeric="integer" />
+
+                <Button
+                    android:id="@+id/btBoxSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="31dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/enviar" />
             </RelativeLayout>
         </LinearLayout>
 
