@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.apphomemanager.Communication.CommFirebase;
 import com.example.apphomemanager.GeneralUse.ConstantsApp;
@@ -31,8 +33,10 @@ public class WaterTankActivity extends AppCompatActivity {
     private EditText etBoxLL;
 
     private Button btBoxSend;
+    private Button btBoxBack;
 
     private int mode;
+    private WaterTankData datasReservoir = new WaterTankData();
 
     final ConstantsApp constants = new ConstantsApp();
 
@@ -40,12 +44,6 @@ public class WaterTankActivity extends AppCompatActivity {
     DatabaseReference reference = database.getReference();
 
     final DatabaseReference dbOutStatus = reference;
-
-    private void sendDataInt(DatabaseReference reference, String path, int value){
-        //dbOutStatus.child("living").child("power").child("out4").setValue(action ? 1 : 0);
-        //dbOutStatus.child("kitchen/l/o1").setValue(8);
-        reference.child(path).setValue(value);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,27 +61,20 @@ public class WaterTankActivity extends AppCompatActivity {
         etBoxLL = (EditText) findViewById(R.id.etBoxLL);
 
         btBoxSend = (Button) findViewById(R.id.btBoxSend);
+        btBoxBack = (Button) findViewById(R.id.btBoxBack);
 
         mode = getIntent().getExtras().getInt("mode");
         startComponents(mode);
 
-        btBoxSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //dbOutStatus.child("kitchen/l/o1").setValue(8);
-                sendDataInt(dbOutStatus, "kitchen/l/o1", 6);
-
-            }
-        });
-
         dbOutStatus.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                WaterTankData tempData = new CommFirebase().getDataWaterTank(dataSnapshot, constants.getPathReservoir()[mode]);
 
-                WaterTankData dataCistern = new CommFirebase().getDataWaterTank(dataSnapshot, constants.getPathReservoir()[mode]);
+                if (isUpdateData(tempData))
+                    updateData(tempData, mode);
 
-                updateData(dataCistern, mode);
+                //Toast.makeText(getApplicationContext(), "btBoxSend On", Toast.LENGTH_SHORT).show();
 
                 //Log.w("Firebase", database.toString());
                 /*
@@ -164,9 +155,65 @@ public class WaterTankActivity extends AppCompatActivity {
             }
         });
     }
-    //26/04 - 1150
+
+    private boolean isUpdateData(WaterTankData data){
+
+        if (data.getLh() != datasReservoir.getLh())
+            return true;
+
+        if (data.getLl() != datasReservoir.getLl())
+            return true;
+
+        for (int i = 0; i < data.getAddress().length; i++){
+            if (!data.getAddress()[i].equals(datasReservoir.getAddress()[i]))
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    public void buttonClicked(View item){
+
+        switch (item.getId()){
+            case R.id.btBoxBack:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+
+            case R.id.btBoxSend:
+                //Toast.makeText(getApplicationContext(), "btBoxSend On", Toast.LENGTH_SHORT).show();
+                btBoxSendClick();
+                break;
+        }
+    }
+
+    private void btBoxSendClick() {
+        CommFirebase gate = new CommFirebase();
+
+        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/set/LH", Integer.parseInt(etBoxLH.getText().toString()));
+        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/set/LL", Integer.parseInt(etBoxLL.getText().toString()));
+        switch(mode){
+            case 0:
+                //gate.sendDataInt(dbOutStatus, "kitchen/l/o1", 6);
+                gate.sendDataString(dbOutStatus, constants.getPathReservoir()[mode]+"/abx1", etBox1.getText().toString());
+                gate.sendDataString(dbOutStatus, constants.getPathReservoir()[mode]+"/abx2", etBox2.getText().toString());
+                gate.sendDataString(dbOutStatus, constants.getPathReservoir()[mode]+"/abx3", etBox3.getText().toString());
+                break;
+
+            case 1:
+                gate.sendDataString(dbOutStatus, constants.getPathReservoir()[mode]+"/ci", etBox1.getText().toString());
+                break;
+        }
+
+        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/fcp", 1);
+    }
 
     void updateData (WaterTankData data, int mode){
+        String tempS[] = new String[data.getAddress().length];
 
         etBox1.setText(data.getAddress()[0]);
         etBoxLH.setText(data.getLh()+"");
@@ -181,6 +228,14 @@ public class WaterTankActivity extends AppCompatActivity {
             case 1:
                 break;
         }
+
+        datasReservoir.setLh(data.getLh());
+        datasReservoir.setLl(data.getLl());
+
+        for (int i = 0; i < datasReservoir.getAddress().length; i++){
+            tempS[i] = data.getAddress()[i];
+        }
+        datasReservoir.setAddress(tempS);
     }
 
     void startComponents(int mode){

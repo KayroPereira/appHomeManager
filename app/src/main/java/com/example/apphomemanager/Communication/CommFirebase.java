@@ -7,6 +7,7 @@ import androidx.core.util.LogWriter;
 import com.example.apphomemanager.GeneralUse.ComponentStatus;
 import com.example.apphomemanager.GeneralUse.WaterTankData;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -95,5 +96,15 @@ public class CommFirebase {
         }
 
         return data;
+    }
+
+    public void sendDataInt(DatabaseReference reference, String path, int value){
+        //dbOutStatus.child("living").child("power").child("out4").setValue(action ? 1 : 0);
+        //dbOutStatus.child("kitchen/l/o1").setValue(8);
+        reference.child(path).setValue(value);
+    }
+
+    public void sendDataString(DatabaseReference reference, String path, String value){
+        reference.child(path).setValue(value);
     }
 }

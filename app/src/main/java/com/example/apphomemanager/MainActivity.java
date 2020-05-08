@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 //Bundle bundle = new Bundle();
                 //bundle.putInt("mode", new ConstantsApp().getCISTERN());
                 Intent it = new Intent(MainActivity.this, WaterTankActivity.class);
-                //it.putExtra("mode", new ConstantsApp().getCISTERN());
-                it.putExtra("mode", new ConstantsApp().getWATER_TANK());
+                it.putExtra("mode", new ConstantsApp().getCISTERN());
+                //it.putExtra("mode", new ConstantsApp().getWATER_TANK());
                 //it.putExtra("mode", 0);
                 startActivity(it);
 
