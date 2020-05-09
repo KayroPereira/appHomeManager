@@ -12,6 +12,13 @@
     <string name="titleDoorLock">Door Lock</string>
     <string name="titleConfigCard">Cadastrar Cartão</string>
 
+
+    <!-- status -->
+    <string name="status">Status</string>
+    <string name="onLine">On-Line</string>
+    <string name="offLine">Off-Line</string>
+
+
     <string name="login">Login</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="enviar">Enviar</string>
@@ -48,6 +55,7 @@
 
     <string name="light">Light</string>
     <string name="power">Power</string>
+
     <string name="ssid">SSID:</string>
     <string name="unidentified">unidentified</string>
 

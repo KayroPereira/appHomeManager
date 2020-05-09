@@ -7,215 +7,276 @@
     android:background="@drawable/backgroungazul"
     tools:context="com.example.apphomemanager.WaterTankActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btBoxSetupWT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="3dp"
+            android:onClick="buttonClickedWT"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btBoxBackWT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:onClick="buttonClickedWT"
+            android:text="@string/voltar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="223dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/tvBoxStatusWT"
+            android:layout_width="105dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/offLine"
+            android:textAlignment="center"
+            android:textColor="?android:attr/colorButtonNormal"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvBoxErrWT"
+            android:layout_width="135dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/offLine"
+            android:textAlignment="center"
+            android:textColor="?android:attr/colorButtonNormal"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT" />
+
+        <TextView
+            android:id="@+id/tvBoxStatusValueWT"
+            android:layout_width="105dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/caixa"
+            android:textColor="?android:attr/colorButtonNormal"
+            android:textSize="26dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvBox3"
+            android:layout_width="105dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/caixa"
+            android:textColor="?android:attr/colorButtonNormal"
+            android:textSize="26dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvBoxReservoirWT"
+            android:layout_width="148dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/caixa"
+            android:textColor="?android:attr/colorButtonNormal"
+            android:textSize="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBoxReservoirWT">
+
+            <TextView
+                android:id="@+id/tvskbL"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/abeezee"
+                android:text="L"
+                android:textAlignment="center"
+                android:textColor="?android:attr/colorButtonNormal"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT" />
+
+            <TextView
+                android:id="@+id/tvskbAuto"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/abeezee"
+                android:text="Auto"
+                android:textAlignment="center"
+                android:textColor="?android:attr/colorButtonNormal"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/tvskbH"
+                app:layout_constraintStart_toEndOf="@+id/tvskbL"
+                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT" />
+
+            <TextView
+                android:id="@+id/tvskbH"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/abeezee"
+                android:text="H"
+                android:textAlignment="center"
+                android:textColor="?android:attr/colorButtonNormal"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT" />
+
+            <SeekBar
+                android:id="@+id/skbModeWT"
+                style="@android:style/Widget.Material.SeekBar.Discrete"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="3dp"
+                android:max="2"
+                android:progress="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvskbAuto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="301dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="225dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="248dp">
+            <TextView
+                android:id="@+id/tvBoxLevels"
+                android:layout_width="148dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="255dp"
+                android:fontFamily="@font/abeezee"
+                android:text="@string/nivel"
+                android:textColor="?android:attr/colorButtonNormal"
+                android:textSize="26dp" />
 
-                <TextView
-                    android:id="@+id/tvBoxAddress"
-                    android:layout_width="148dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="261dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/endereco"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp" />
+            <TextView
+                android:id="@+id/tvBoxLH"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/tvBoxLevels"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/abeezee"
+                android:text="@string/sup"
+                android:textColor="?android:attr/colorButtonNormal"
+                android:textSize="26dp" />
 
-                <TextView
-                    android:id="@+id/tvBox1"
-                    android:layout_width="105dp"
-                    android:layout_height="35dp"
-                    android:layout_below="@+id/tvBoxAddress"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/caixa"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp" />
+            <EditText
+                android:id="@+id/etBoxLH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvBoxLevels"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="40dp"
+                android:layout_toEndOf="@+id/tvBoxStatusWT"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:numeric="integer" />
 
-                <TextView
-                    android:id="@+id/tvBox2"
-                    android:layout_width="105dp"
-                    android:layout_height="35dp"
-                    android:layout_below="@+id/tvBox1"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/caixa"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp" />
+            <TextView
+                android:id="@+id/tvBoxLL"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/tvBoxLH"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/abeezee"
+                android:text="@string/inf"
+                android:textColor="?android:attr/colorButtonNormal"
+                android:textSize="26dp" />
 
-                <TextView
-                    android:id="@+id/tvBox3"
-                    android:layout_width="105dp"
-                    android:layout_height="35dp"
-                    android:layout_below="@+id/tvBox2"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/caixa"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp" />
+            <EditText
+                android:id="@+id/etBoxLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etBoxLH"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="40dp"
+                android:layout_toEndOf="@+id/tvBoxStatusWT"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:numeric="integer" />
 
-                <EditText
-                    android:id="@+id/etBox1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvBoxAddress"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_toEndOf="@+id/tvBox1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textAlignment="center" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <EditText
-                    android:id="@+id/etBox2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/etBox1"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_toEndOf="@+id/tvBox1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/etBox3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/etBox2"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_toEndOf="@+id/tvBox1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textAlignment="center" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="356dp">
-
-                <TextView
-                    android:id="@+id/tvBoxLevels"
-                    android:layout_width="148dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_marginEnd="255dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/nivel"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp" />
-
-                <TextView
-                    android:id="@+id/tvBoxLH"
-                    android:layout_width="115dp"
-                    android:layout_height="35dp"
-                    android:layout_below="@+id/tvBoxLevels"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/sup"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp" />
-
-                <EditText
-                    android:id="@+id/etBoxLH"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvBoxLevels"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_toEndOf="@+id/tvBox1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:numeric="integer" />
-
-                <TextView
-                    android:id="@+id/tvBoxLL"
-                    android:layout_width="115dp"
-                    android:layout_height="35dp"
-                    android:layout_below="@+id/tvBoxLH"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/inf"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp" />
-
-                <EditText
-                    android:id="@+id/etBoxLL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/etBoxLH"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_toEndOf="@+id/tvBox1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:numeric="integer" />
-
-                <Button
-                    android:id="@+id/btBoxSend"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginBottom="15dp"
-                    android:onClick="buttonClicked"
-                    android:text="@string/enviar" />
-
-                <Button
-                    android:id="@+id/btBoxBack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/btBoxSend"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="253dp"
-                    android:layout_marginBottom="14dp"
-                    android:onClick="buttonClicked"
-                    android:text="@string/voltar" />
-            </RelativeLayout>
-        </LinearLayout>
-
-    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

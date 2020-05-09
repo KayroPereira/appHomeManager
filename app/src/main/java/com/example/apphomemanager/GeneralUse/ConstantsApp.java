@@ -4,11 +4,20 @@ public class ConstantsApp {
 
     final int CISTERN = 0;
     final int WATER_TANK = 1;
-    final String pathReservoir[] = {"cix1", "cx1"};
+    final int LOW = 0;
+    final int HIGH = 1;
+    final int AUTO = 2;
 
-    public String[] getPathReservoir() {
-        return pathReservoir;
-    }
+    final String pathReservoir[] = {"cix1", "cx1"};
+    final String pathStatusDevice[] = {"/sp1", "/sv1"};
+    final String pathDeviceSet[] = {"/p1s", "/v1s"};
+    final String pathLevelH = "/set/LH";
+    final String pathLevelL = "/set/LL";
+    final String pathFcp = "/fcp";
+    final String pathFrr = "/err";
+    final String pathLevel = "/level";
+
+    final String erros[] = {"erro1", "erro2", "erro3"};
 
     public int getCISTERN() {
         return CISTERN;
@@ -16,5 +25,53 @@ public class ConstantsApp {
 
     public int getWATER_TANK() {
         return WATER_TANK;
+    }
+
+    public int getLOW() {
+        return LOW;
+    }
+
+    public int getHIGH() {
+        return HIGH;
+    }
+
+    public int getAUTO() {
+        return AUTO;
+    }
+
+    public String[] getPathReservoir() {
+        return pathReservoir;
+    }
+
+    public String[] getPathStatusDevice() {
+        return pathStatusDevice;
+    }
+
+    public String[] getPathDeviceSet() {
+        return pathDeviceSet;
+    }
+
+    public String getPathLevelH() {
+        return pathLevelH;
+    }
+
+    public String getPathLevelL() {
+        return pathLevelL;
+    }
+
+    public String getPathFcp() {
+        return pathFcp;
+    }
+
+    public String getPathFrr() {
+        return pathFrr;
+    }
+
+    public String getPathLevel() {
+        return pathLevel;
+    }
+
+    public String[] getErros() {
+        return erros;
     }
 }

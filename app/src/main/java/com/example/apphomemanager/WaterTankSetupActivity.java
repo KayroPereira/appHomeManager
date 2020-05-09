@@ -1,15 +1,13 @@
 package com.example.apphomemanager;
 
-import android.content.Intent;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.apphomemanager.Communication.CommFirebase;
 import com.example.apphomemanager.GeneralUse.ConstantsApp;
@@ -20,13 +18,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class WaterTankActivity extends AppCompatActivity {
+public class WaterTankSetupActivity extends AppCompatActivity {
 
-    private TextView tvBoxReservoirWT;
-    private TextView tvBoxStatusWT;
-    private TextView tvBoxErrWT;
-    private TextView tvBoxStatusValueWT;
-
+    private TextView tvBox1;
+    private TextView tvBox2;
+    private TextView tvBox3;
 
     private EditText etBox1;
     private EditText etBox2;
@@ -34,10 +30,8 @@ public class WaterTankActivity extends AppCompatActivity {
     private EditText etBoxLH;
     private EditText etBoxLL;
 
-    private Button btBoxSetupWT;
-    private Button btBoxBackWT;
-
-    private SeekBar skbModeWT;
+    private Button btBoxSend;
+    private Button btBoxBack;
 
     private int mode;
     private WaterTankData datasReservoir = new WaterTankData();
@@ -52,12 +46,11 @@ public class WaterTankActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_water_tank);
+        setContentView(R.layout.activity_water_tank_setup);
 
-        tvBoxReservoirWT = (TextView) findViewById(R.id.tvBoxReservoirWT);
-        tvBoxStatusWT = (TextView) findViewById(R.id.tvBoxStatusWT);
-        tvBoxErrWT = (TextView) findViewById(R.id.tvBoxErrWT);
-        tvBoxStatusValueWT = (TextView) findViewById(R.id.tvBoxStatusValueWT);
+        tvBox1 = (TextView) findViewById(R.id.tvBoxStatusWT);
+        tvBox2 = (TextView) findViewById(R.id.tvBoxStatusValueWT);
+        tvBox3 = (TextView) findViewById(R.id.tvBox3);
 
         etBox1 = (EditText) findViewById(R.id.etBox1);
         etBox2 = (EditText) findViewById(R.id.etBox2);
@@ -65,32 +58,11 @@ public class WaterTankActivity extends AppCompatActivity {
         etBoxLH = (EditText) findViewById(R.id.etBoxLH);
         etBoxLL = (EditText) findViewById(R.id.etBoxLL);
 
-        btBoxSetupWT = (Button) findViewById(R.id.btBoxSetupWT);
-        btBoxBackWT = (Button) findViewById(R.id.btBoxBackWT);
-
-        skbModeWT = (SeekBar) findViewById(R.id.skbModeWT);
+        btBoxSend = (Button) findViewById(R.id.btBoxSetupWT);
+        btBoxBack = (Button) findViewById(R.id.btBoxBackWT);
 
         mode = getIntent().getExtras().getInt("mode");
         startComponents(mode);
-
-        //Toast.makeText(getApplicationContext(), "Inicio", Toast.LENGTH_SHORT).show();
-
-        skbModeWT.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-
-                new CommFirebase().sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+constants.getPathDeviceSet()[mode],
-                                                i == 2 ? constants.getHIGH() : i == 1 ? constants.getAUTO() : constants.getLOW());
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
 
         dbOutStatus.addValueEventListener(new ValueEventListener() {
             @Override
@@ -98,7 +70,7 @@ public class WaterTankActivity extends AppCompatActivity {
                 WaterTankData tempData = new CommFirebase().getDataWaterTank(dataSnapshot, constants.getPathReservoir()[mode]);
 
                 if (isUpdateData(tempData))
-                    startComponents(mode);
+                    updateData(tempData, mode);
 
                 //Toast.makeText(getApplicationContext(), "btBoxSend On", Toast.LENGTH_SHORT).show();
 
@@ -184,11 +156,15 @@ public class WaterTankActivity extends AppCompatActivity {
 
     private boolean isUpdateData(WaterTankData data){
 
-        if ((data.getFcp() != datasReservoir.getFcp()) || (data.getErr() != datasReservoir.getErr()) ||
-            (data.getLevel() != datasReservoir.getLevel()) || (data.getSx1() != datasReservoir.getSx1()) ||
-            (data.getX1s() != datasReservoir.getX1s())) {
-            datasReservoir = data;
+        if (data.getLh() != datasReservoir.getLh())
             return true;
+
+        if (data.getLl() != datasReservoir.getLl())
+            return true;
+
+        for (int i = 0; i < data.getAddress().length; i++){
+            if (!data.getAddress()[i].equals(datasReservoir.getAddress()[i]))
+                return true;
         }
         return false;
     }
@@ -198,7 +174,7 @@ public class WaterTankActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    public void buttonClickedWT(View item){
+    public void buttonClicked(View item){
 
         switch (item.getId()){
             case R.id.btBoxBackWT:
@@ -208,12 +184,30 @@ public class WaterTankActivity extends AppCompatActivity {
 
             case R.id.btBoxSetupWT:
                 //Toast.makeText(getApplicationContext(), "btBoxSend On", Toast.LENGTH_SHORT).show();
-                Intent it = new Intent(this, WaterTankSetupActivity.class);
-                //it.putExtra("mode", new ConstantsApp().getCISTERN());
-                it.putExtra("mode", new ConstantsApp().getWATER_TANK());
-                startActivity(it);
+                btBoxSendClick();
                 break;
         }
+    }
+
+    private void btBoxSendClick() {
+        CommFirebase gate = new CommFirebase();
+
+        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/set/LH", Integer.parseInt(etBoxLH.getText().toString()));
+        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/set/LL", Integer.parseInt(etBoxLL.getText().toString()));
+        switch(mode){
+            case 0:
+                //gate.sendDataInt(dbOutStatus, "kitchen/l/o1", 6);
+                gate.sendDataString(dbOutStatus, constants.getPathReservoir()[mode]+"/abx1", etBox1.getText().toString());
+                gate.sendDataString(dbOutStatus, constants.getPathReservoir()[mode]+"/abx2", etBox2.getText().toString());
+                gate.sendDataString(dbOutStatus, constants.getPathReservoir()[mode]+"/abx3", etBox3.getText().toString());
+                break;
+
+            case 1:
+                gate.sendDataString(dbOutStatus, constants.getPathReservoir()[mode]+"/ci", etBox1.getText().toString());
+                break;
+        }
+
+        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/fcp", 1);
     }
 
     void updateData (WaterTankData data, int mode){
@@ -244,14 +238,28 @@ public class WaterTankActivity extends AppCompatActivity {
 
     void startComponents(int mode){
 
-        tvBoxReservoirWT.setText(mode == 0 ? getString(R.string.cisterna) : getString(R.string.caixa));
-        tvBoxStatusWT.setText(datasReservoir.getFcp() == 0 ? getString(R.string.onLine) : getString(R.string.offLine));
+        etBox1.setEnabled(true);
 
-        if (datasReservoir.getErr() == 0) {
-            tvBoxErrWT.setVisibility(View.INVISIBLE);
-        }else{
-            tvBoxErrWT.setVisibility(View.VISIBLE);
-            tvBoxErrWT.setText(constants.getErros()[datasReservoir.getErr()]);
+        switch(mode){
+            case 0:
+                tvBox1.setText(getString(R.string.caixa) + " 1");
+                tvBox2.setText(getString(R.string.caixa) + " 2");
+                tvBox3.setText(getString(R.string.caixa) + " 3");
+
+                tvBox2.setVisibility(View.VISIBLE);
+                tvBox3.setVisibility(View.VISIBLE);
+                etBox2.setVisibility(View.VISIBLE);
+                etBox3.setVisibility(View.VISIBLE);
+                break;
+
+            case 1:
+                tvBox1.setText(getString(R.string.cisterna));
+
+                etBox2.setVisibility(View.GONE);
+                etBox3.setVisibility(View.GONE);
+                tvBox2.setVisibility(View.GONE);
+                tvBox3.setVisibility(View.GONE);
+                break;
         }
     }
 }
