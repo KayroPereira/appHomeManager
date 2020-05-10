@@ -20,18 +20,18 @@ import com.google.firebase.database.ValueEventListener;
 
 public class WaterTankSetupActivity extends AppCompatActivity {
 
-    private TextView tvBox1;
-    private TextView tvBox2;
-    private TextView tvBox3;
+    private TextView tvReservoirPath1WTS;
+    private TextView tvReservoirPath2WTS;
+    private TextView tvReservoirPath3WTS;
 
     private EditText etBox1;
     private EditText etBox2;
     private EditText etBox3;
-    private EditText etBoxLH;
-    private EditText etBoxLL;
+    private EditText etBoxLHWTS;
+    private EditText etBoxLLWTS;
 
-    private Button btBoxSend;
-    private Button btBoxBack;
+    private Button btSendWTS;
+    private Button btBackWTS;
 
     private int mode;
     private WaterTankData datasReservoir = new WaterTankData();
@@ -48,18 +48,18 @@ public class WaterTankSetupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_tank_setup);
 
-        tvBox1 = (TextView) findViewById(R.id.tvBoxStatusWT);
-        tvBox2 = (TextView) findViewById(R.id.tvLevelHWT);
-        tvBox3 = (TextView) findViewById(R.id.tvLevelWT);
+        tvReservoirPath1WTS = (TextView) findViewById(R.id.tvReservoirPath1WTS);
+        tvReservoirPath2WTS = (TextView) findViewById(R.id.tvReservoirPath2WTS);
+        tvReservoirPath3WTS = (TextView) findViewById(R.id.tvReservoirPath3WTS);
 
-        etBox1 = (EditText) findViewById(R.id.etBox1);
-        etBox2 = (EditText) findViewById(R.id.etBox2);
-        etBox3 = (EditText) findViewById(R.id.etBox3);
-        etBoxLH = (EditText) findViewById(R.id.etBoxLH);
-        etBoxLL = (EditText) findViewById(R.id.etBoxLL);
+        etBox1 = (EditText) findViewById(R.id.etBox1WTS);
+        etBox2 = (EditText) findViewById(R.id.etBox2WTS);
+        etBox3 = (EditText) findViewById(R.id.etBox3WTS);
+        etBoxLHWTS = (EditText) findViewById(R.id.etBoxLHWTS);
+        etBoxLLWTS = (EditText) findViewById(R.id.etBoxLLWTS);
 
-        btBoxSend = (Button) findViewById(R.id.btBoxSetupWT);
-        btBoxBack = (Button) findViewById(R.id.btBoxBackWT);
+        btSendWTS = (Button) findViewById(R.id.btSendWTS);
+        btBackWTS = (Button) findViewById(R.id.btBackWTS);
 
         mode = getIntent().getExtras().getInt("mode");
         startComponents(mode);
@@ -177,12 +177,12 @@ public class WaterTankSetupActivity extends AppCompatActivity {
     public void buttonClicked(View item){
 
         switch (item.getId()){
-            case R.id.btBoxBackWT:
+            case R.id.btBackWTS:
                 //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
 
-            case R.id.btBoxSetupWT:
+            case R.id.btSendWTS:
                 //Toast.makeText(getApplicationContext(), "btBoxSend On", Toast.LENGTH_SHORT).show();
                 btBoxSendClick();
                 break;
@@ -192,8 +192,8 @@ public class WaterTankSetupActivity extends AppCompatActivity {
     private void btBoxSendClick() {
         CommFirebase gate = new CommFirebase();
 
-        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/set/LH", Integer.parseInt(etBoxLH.getText().toString()));
-        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/set/LL", Integer.parseInt(etBoxLL.getText().toString()));
+        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/set/LH", Integer.parseInt(etBoxLHWTS.getText().toString()));
+        gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/set/LL", Integer.parseInt(etBoxLLWTS.getText().toString()));
         switch(mode){
             case 0:
                 //gate.sendDataInt(dbOutStatus, "kitchen/l/o1", 6);
@@ -214,8 +214,8 @@ public class WaterTankSetupActivity extends AppCompatActivity {
         String tempS[] = new String[data.getAddress().length];
 
         etBox1.setText(data.getAddress()[0]);
-        etBoxLH.setText(data.getLh()+"");
-        etBoxLL.setText(data.getLl()+"");
+        etBoxLHWTS.setText(data.getLh()+"");
+        etBoxLLWTS.setText(data.getLl()+"");
 
         switch(mode){
             case 0:
@@ -242,23 +242,23 @@ public class WaterTankSetupActivity extends AppCompatActivity {
 
         switch(mode){
             case 0:
-                tvBox1.setText(getString(R.string.caixa) + " 1");
-                tvBox2.setText(getString(R.string.caixa) + " 2");
-                tvBox3.setText(getString(R.string.caixa) + " 3");
+                tvReservoirPath1WTS.setText(getString(R.string.caixa) + " 1");
+                tvReservoirPath2WTS.setText(getString(R.string.caixa) + " 2");
+                tvReservoirPath3WTS.setText(getString(R.string.caixa) + " 3");
 
-                tvBox2.setVisibility(View.VISIBLE);
-                tvBox3.setVisibility(View.VISIBLE);
+                tvReservoirPath2WTS.setVisibility(View.VISIBLE);
+                tvReservoirPath3WTS.setVisibility(View.VISIBLE);
                 etBox2.setVisibility(View.VISIBLE);
                 etBox3.setVisibility(View.VISIBLE);
                 break;
 
             case 1:
-                tvBox1.setText(getString(R.string.cisterna));
+                tvReservoirPath1WTS.setText(getString(R.string.cisterna));
 
                 etBox2.setVisibility(View.GONE);
                 etBox3.setVisibility(View.GONE);
-                tvBox2.setVisibility(View.GONE);
-                tvBox3.setVisibility(View.GONE);
+                tvReservoirPath2WTS.setVisibility(View.GONE);
+                tvReservoirPath3WTS.setVisibility(View.GONE);
                 break;
         }
     }

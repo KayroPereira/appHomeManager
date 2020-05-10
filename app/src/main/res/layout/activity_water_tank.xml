@@ -186,8 +186,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLevelLWT"
-            app:srcCompat="@drawable/ct0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvLevelLWT" />
 
         <TextView
             android:id="@+id/tvLevelHWT"
