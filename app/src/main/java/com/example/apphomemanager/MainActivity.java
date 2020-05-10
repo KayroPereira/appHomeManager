@@ -71,13 +71,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //remover
-                //Intent it = new Intent(MainActivity.this, DashBoardActivity.class);
+                Intent it = new Intent(MainActivity.this, DashBoardActivity.class);
                 //Bundle bundle = new Bundle();
                 //bundle.putInt("mode", new ConstantsApp().getCISTERN());
                 //Intent it = new Intent(MainActivity.this, WaterTankSetupActivity.class);
-                Intent it = new Intent(MainActivity.this, WaterTankActivity.class);
+                //Intent it = new Intent(MainActivity.this, WaterTankActivity.class);
                 //it.putExtra("mode", new ConstantsApp().getCISTERN());
-                it.putExtra("mode", new ConstantsApp().getWATER_TANK());
+                //it.putExtra("mode", new ConstantsApp().getWATER_TANK());
                 //it.putExtra("mode", 0);
                 startActivity(it);
 

@@ -10,6 +10,44 @@
     tools:context="com.example.apphomemanager.DashBoardActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctReservoirDB"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctLt6">
+
+        <TextView
+            android:id="@+id/tvReservoirDB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="18dp"
+            android:text="@string/reservatorio"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivReservoirDB"
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/btbedroomcolor1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ctLt1"
         android:layout_width="wrap_content"
         android:layout_height="130dp"

@@ -31,6 +31,7 @@ public class DashBoardActivity extends AppCompatActivity {
     private ImageView ivKitchen;
     private ImageView ivConfiguration;
     private ImageView ivDoorLock;
+    private ImageView ivReservoirDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,15 @@ public class DashBoardActivity extends AppCompatActivity {
         ivKitchen = (ImageView) findViewById(R.id.ivKitchen);
         ivConfiguration = (ImageView) findViewById(R.id.ivConfigurationDash);
         ivDoorLock = (ImageView) findViewById(R.id.ivDoorLockDash);
+        ivReservoirDB = (ImageView) findViewById(R.id.ivReservoirDB);
+
+        ivReservoirDB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(DashBoardActivity.this, DashBoardReservoirActivity.class);
+                startActivity(it);
+            }
+        });
 
         ivLivingRoom.setOnClickListener(new View.OnClickListener() {
             @Override
