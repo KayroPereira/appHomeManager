@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroungazul"
+    android:background="@drawable/background3"
     tools:context="com.example.apphomemanager.WaterTankActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,30 +18,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/btBoxSetupWT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="3dp"
+        <ImageView
+            android:id="@+id/ivSetupWT"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="5dp"
             android:onClick="buttonClickedWT"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/setup" />
 
-        <Button
-            android:id="@+id/btBoxBackWT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
+        <ImageView
+            android:id="@+id/ivBackWT"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
             android:onClick="buttonClickedWT"
-            android:text="@string/voltar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,7 +65,8 @@
             android:textColor="?android:attr/colorButtonNormal"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop" />
 
         <TextView
             android:id="@+id/tvBoxErrWT"
@@ -80,7 +79,8 @@
             android:textColor="?android:attr/colorButtonNormal"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT" />
+            app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT"
+            tools:targetApi="lollipop" />
 
         <TextView
             android:id="@+id/tvBoxReservoirWT"
@@ -93,7 +93,8 @@
             android:textColor="?android:attr/colorButtonNormal"
             android:textSize="26dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="170dp"
@@ -103,19 +104,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBoxReservoirWT">
 
-            <TextView
-                android:id="@+id/tvskbL"
-                android:layout_width="25dp"
+            <SeekBar
+                android:id="@+id/skbModeWT"
+                style="@android:style/Widget.Material.SeekBar.Discrete"
+                android:layout_width="150dp"
                 android:layout_height="25dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/abeezee"
-                android:text="@string/off"
-                android:textAlignment="center"
-                android:textColor="?android:attr/colorButtonNormal"
-                android:textSize="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="3dp"
+                android:max="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT" />
+                app:layout_constraintTop_toBottomOf="@+id/tvskbAuto"
+                tools:targetApi="n" />
 
             <TextView
                 android:id="@+id/tvskbAuto"
@@ -131,7 +134,9 @@
                 android:textSize="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/tvskbH"
                 app:layout_constraintStart_toEndOf="@+id/tvskbL"
-                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT" />
+                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT"
+                tools:ignore="NotSibling"
+                tools:targetApi="lollipop" />
 
             <TextView
                 android:id="@+id/tvskbH"
@@ -145,22 +150,25 @@
                 android:textColor="?android:attr/colorButtonNormal"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT" />
+                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT"
+                tools:ignore="NotSibling"
+                tools:targetApi="lollipop" />
 
-            <SeekBar
-                android:id="@+id/skbModeWT"
-                style="@android:style/Widget.Material.SeekBar.Discrete"
-                android:layout_width="150dp"
+            <TextView
+                android:id="@+id/tvskbL"
+                android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="3dp"
-                android:max="2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/abeezee"
+                android:text="@string/off"
+                android:textAlignment="center"
+                android:textColor="?android:attr/colorButtonNormal"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvskbAuto" />
+                app:layout_constraintTop_toBottomOf="@+id/tvBoxStatusWT"
+                tools:ignore="NotSibling"
+                tools:targetApi="lollipop" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -200,7 +208,8 @@
             android:textColor="?android:attr/colorButtonNormal"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop" />
 
         <TextView
             android:id="@+id/tvLevelWT"
@@ -216,7 +225,8 @@
             android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@+id/tvLevelLWT"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLevelHWT" />
+            app:layout_constraintTop_toBottomOf="@+id/tvLevelHWT"
+            tools:targetApi="lollipop" />
 
         <TextView
             android:id="@+id/tvLevelLWT"
@@ -230,7 +240,8 @@
             android:textColor="?android:attr/colorButtonNormal"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLevelWT" />
+            app:layout_constraintTop_toBottomOf="@+id/tvLevelWT"
+            tools:targetApi="lollipop" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

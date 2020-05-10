@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
         login.setText("");
         password.setText("");
-        login.requestFocus();
+        //login.requestFocus();
     }
 /*
     @Override

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroungazul"
+    android:background="@drawable/background3"
+    android:focusable="true" android:focusableInTouchMode="true"
     tools:context="com.example.apphomemanager.WaterTankSetupActivity">
 
     <ScrollView
@@ -26,27 +27,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <Button
-                    android:id="@+id/btBackWTS"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/ivBackWTS"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginStart="5dp"
                     android:onClick="buttonClicked"
-                    android:text="@string/voltar"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/back" />
 
-                <Button
-                    android:id="@+id/btSendWTS"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/ivSendWTS"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginEnd="5dp"
                     android:onClick="buttonClicked"
-                    android:text="@string/enviar"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/save" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -57,61 +58,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
-
-                <TextView
-                    android:id="@+id/tvPathWTS"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/endereco"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvReservoirPath1WTS"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/caixa"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/etBox1WTS"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvReservoirPath2WTS"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/caixa"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/etBox2WTS"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvReservoirPath3WTS"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/caixa"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/etBox3WTS"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
-                    app:layout_constraintStart_toStartOf="parent" />
 
                 <EditText
                     android:id="@+id/etBox1WTS"
@@ -149,6 +95,65 @@
                     app:layout_constraintStart_toStartOf="@+id/guideline12"
                     app:layout_constraintTop_toBottomOf="@+id/etBox2WTS" />
 
+                <TextView
+                    android:id="@+id/tvReservoirPath3WTS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/caixa"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/etBox3WTS"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="lollipop" />
+
+                <TextView
+                    android:id="@+id/tvPathWTS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/endereco"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="lollipop" />
+
+                <TextView
+                    android:id="@+id/tvReservoirPath1WTS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/caixa"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/etBox1WTS"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="lollipop" />
+
+                <TextView
+                    android:id="@+id/tvReservoirPath2WTS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/caixa"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/etBox2WTS"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="lollipop" />
+
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline12"
                     android:layout_width="wrap_content"
@@ -166,47 +171,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
-
-                <TextView
-                    android:id="@+id/tvLevelsWTS"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/nivel"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvLevelHWTS"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/sup"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/etBoxLHWTS"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline11"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvLevelLWTS"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/inf"
-                    android:textColor="?android:attr/colorButtonNormal"
-                    android:textSize="26dp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/etBoxLLWTS"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline11"
-                    app:layout_constraintStart_toStartOf="parent" />
 
                 <EditText
                     android:id="@+id/etBoxLHWTS"
@@ -233,6 +197,50 @@
                     android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="@+id/guideline11"
                     app:layout_constraintTop_toBottomOf="@+id/etBoxLHWTS" />
+
+                <TextView
+                    android:id="@+id/tvLevelLWTS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/inf"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/etBoxLLWTS"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="lollipop" />
+
+                <TextView
+                    android:id="@+id/tvLevelsWTS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/nivel"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="lollipop" />
+
+                <TextView
+                    android:id="@+id/tvLevelHWTS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/sup"
+                    android:textColor="?android:attr/colorButtonNormal"
+                    android:textSize="26dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/etBoxLHWTS"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="lollipop" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline11"

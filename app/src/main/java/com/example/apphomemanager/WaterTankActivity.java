@@ -1,11 +1,9 @@
 package com.example.apphomemanager;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -31,8 +29,8 @@ public class WaterTankActivity extends AppCompatActivity {
     private TextView tvLevelWT;
     private TextView tvLevelLWT;
 
-    private Button btBoxSetupWT;
-    private Button btBoxBackWT;
+    private ImageView ivSetupWT;
+    private ImageView ivBackWT;
 
     private SeekBar skbModeWT;
 
@@ -60,8 +58,8 @@ public class WaterTankActivity extends AppCompatActivity {
         tvLevelWT = (TextView) findViewById(R.id.tvLevelWT);
         tvLevelLWT = (TextView) findViewById(R.id.tvLevelLWT);
 
-        btBoxSetupWT = (Button) findViewById(R.id.btBoxSetupWT);
-        btBoxBackWT = (Button) findViewById(R.id.btBoxBackWT);
+        ivSetupWT = (ImageView) findViewById(R.id.ivSetupWT);
+        ivBackWT = (ImageView) findViewById(R.id.ivBackWT);
 
         skbModeWT = (SeekBar) findViewById(R.id.skbModeWT);
 
@@ -124,12 +122,12 @@ public class WaterTankActivity extends AppCompatActivity {
     public void buttonClickedWT(View item){
 
         switch (item.getId()){
-            case R.id.btBoxBackWT:
+            case R.id.ivBackWT:
                 //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
 
-            case R.id.btBoxSetupWT:
+            case R.id.ivSetupWT:
                 //Toast.makeText(getApplicationContext(), "btBoxSend On", Toast.LENGTH_SHORT).show();
                 Intent it = new Intent(this, WaterTankSetupActivity.class);
                 //it.putExtra("mode", new ConstantsApp().getCISTERN());

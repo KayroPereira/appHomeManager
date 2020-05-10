@@ -13,31 +13,28 @@
         android:label="appHomeManager"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
+
         <activity android:name=".WaterTankSetupActivity"></activity>
         <activity android:name=".WaterTankActivity"></activity>
         <activity android:name=".DashBoardReservoirActivity"></activity>
-        <activity android:name=".doorLockActivity" />
-        <activity
-            android:name=".KitchenActivity"
+
+        <!--- android:screenOrientation="fullSensor"-->
+        <activity android:name=".doorLockActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".LivingRoomActivity"
+        <activity android:name=".KitchenActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".DashBoardActivity"
+        <activity android:name=".LivingRoomActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".CadastroActivity"
+        <activity android:name=".DashBoardActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".NetworkConfigurationActivity"
+        <activity android:name=".CadastroActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ConfigurationActivity"
+        <activity android:name=".NetworkConfigurationActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".MainActivity"
+        <activity android:name=".ConfigurationActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

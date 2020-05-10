@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.apphomemanager.Communication.CommFirebase;
@@ -30,8 +31,8 @@ public class WaterTankSetupActivity extends AppCompatActivity {
     private EditText etBoxLHWTS;
     private EditText etBoxLLWTS;
 
-    private Button btSendWTS;
-    private Button btBackWTS;
+    private ImageView ivSendWTS;
+    private ImageView ivBackWTS;
 
     private int mode;
     private WaterTankData datasReservoir = new WaterTankData();
@@ -58,8 +59,8 @@ public class WaterTankSetupActivity extends AppCompatActivity {
         etBoxLHWTS = (EditText) findViewById(R.id.etBoxLHWTS);
         etBoxLLWTS = (EditText) findViewById(R.id.etBoxLLWTS);
 
-        btSendWTS = (Button) findViewById(R.id.btSendWTS);
-        btBackWTS = (Button) findViewById(R.id.btBackWTS);
+        ivSendWTS = (ImageView) findViewById(R.id.ivSendWTS);
+        ivBackWTS = (ImageView) findViewById(R.id.ivBackWTS);
 
         mode = getIntent().getExtras().getInt("mode");
         startComponents(mode);
@@ -177,12 +178,12 @@ public class WaterTankSetupActivity extends AppCompatActivity {
     public void buttonClicked(View item){
 
         switch (item.getId()){
-            case R.id.btBackWTS:
+            case R.id.ivBackWTS:
                 //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
 
-            case R.id.btSendWTS:
+            case R.id.ivSendWTS:
                 //Toast.makeText(getApplicationContext(), "btBoxSend On", Toast.LENGTH_SHORT).show();
                 btBoxSendClick();
                 break;
