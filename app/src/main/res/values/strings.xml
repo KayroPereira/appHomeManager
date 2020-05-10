@@ -66,6 +66,10 @@
     <string name="cisterna">Cisterna</string>
     <string name="sup">Superior</string>
     <string name="inf">Inferior</string>
+    <string name="off">D</string>
+    <string name="on">L</string>
+    <string name="auto">Auto</string>
+    <string name="atual">Atual</string>
 
 
 </resources>

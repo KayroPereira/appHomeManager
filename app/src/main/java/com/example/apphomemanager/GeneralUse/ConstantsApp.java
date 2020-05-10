@@ -14,10 +14,21 @@ public class ConstantsApp {
     final String pathLevelH = "/set/LH";
     final String pathLevelL = "/set/LL";
     final String pathFcp = "/fcp";
-    final String pathFrr = "/err";
+    final String pathErr = "/err";
     final String pathLevel = "/level";
 
+    final String imagePath[] = {"ct", "wt"};
+    final int imageLength = 20;
+
     final String erros[] = {"erro1", "erro2", "erro3"};
+
+    public String[] getImagePath() {
+        return imagePath;
+    }
+
+    public int getImageLength() {
+        return imageLength;
+    }
 
     public int getCISTERN() {
         return CISTERN;
@@ -63,8 +74,8 @@ public class ConstantsApp {
         return pathFcp;
     }
 
-    public String getPathFrr() {
-        return pathFrr;
+    public String getPathErr() {
+        return pathErr;
     }
 
     public String getPathLevel() {

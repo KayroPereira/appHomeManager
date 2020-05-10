@@ -49,8 +49,8 @@ public class WaterTankSetupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_water_tank_setup);
 
         tvBox1 = (TextView) findViewById(R.id.tvBoxStatusWT);
-        tvBox2 = (TextView) findViewById(R.id.tvBoxStatusValueWT);
-        tvBox3 = (TextView) findViewById(R.id.tvBox3);
+        tvBox2 = (TextView) findViewById(R.id.tvLevelHWT);
+        tvBox3 = (TextView) findViewById(R.id.tvLevelWT);
 
         etBox1 = (EditText) findViewById(R.id.etBox1);
         etBox2 = (EditText) findViewById(R.id.etBox2);
