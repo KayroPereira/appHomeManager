@@ -161,7 +161,15 @@ public class WaterTankActivity extends AppCompatActivity {
     }
 
     int getImageLevel(WaterTankData data){
-        int range = (data.getLh() - data.getLl()) / constants.getImageLength();
-        return (((data.getLh() - data.getLevel()) / range)-1);
+        int range = (data.getLl() - data.getLh()) / constants.getImageLength();
+        int value = ((data.getLl() - data.getLevel() - range) / range);
+
+        if (value < 0)
+            return 0;
+        else
+            if (value >= constants.getImageLength())
+                return constants.getImageLength()-1;
+            else
+                return value;
     }
 }
