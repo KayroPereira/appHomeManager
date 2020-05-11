@@ -11,6 +11,8 @@
     <string name="titleConfiguration">Configuração</string>
     <string name="titleDoorLock">Door Lock</string>
     <string name="titleConfigCard">Cadastrar Cartão</string>
+    <string name="wifi">Wifi</string>
+    <string name="rfid">RFID</string>
 
 
     <!-- status -->

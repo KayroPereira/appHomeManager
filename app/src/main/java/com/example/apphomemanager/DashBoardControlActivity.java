@@ -20,8 +20,10 @@ public class DashBoardControlActivity extends AppCompatActivity {
 
     private AlertDialog alerta;
 
+    private ImageView ivBackDBC;
     private ImageView ivLivingRoom;
     private ImageView ivKitchen;
+
     //private ImageView ivConfiguration;
     //private ImageView ivDoorLock;
     //private ImageView ivReservoirDB;
@@ -33,6 +35,7 @@ public class DashBoardControlActivity extends AppCompatActivity {
 
         ivLivingRoom = (ImageView) findViewById(R.id.ivSalaDBC);
         ivKitchen = (ImageView) findViewById(R.id.ivCozinhaDBC);
+        ivBackDBC = (ImageView) findViewById(R.id.ivBackDBC);
 
 /*
         ivConfiguration = (ImageView) findViewById(R.id.ivSetupDB);
@@ -117,5 +120,15 @@ public class DashBoardControlActivity extends AppCompatActivity {
         });
 
          */
+    }
+
+    public void buttonClicked(View item){
+
+        switch (item.getId()){
+            case R.id.ivBackDBC:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+        }
     }
 }

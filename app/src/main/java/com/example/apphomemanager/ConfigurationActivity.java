@@ -9,20 +9,23 @@ import android.widget.ImageView;
 
 public class ConfigurationActivity extends AppCompatActivity {
 
-    private ImageView ivCadastro;
-    private ImageView ivConfiguracao;
-    private ImageView ivCardRecord;
+    private ImageView ivBackCFG;
+    private ImageView ivCadastroCFG;
+    private ImageView ivCardRecordCFG;
+    private ImageView ivConfWifiCFG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
 
-        ivCadastro = (ImageView) findViewById(R.id.ivCadastro);
-        ivConfiguracao = (ImageView) findViewById(R.id.ivConfiguracaoConf);
-        ivCardRecord = (ImageView) findViewById(R.id.ivCardRecord);
+        ivBackCFG = (ImageView) findViewById(R.id.ivBackCFG);
 
-        ivCadastro.setOnClickListener(new View.OnClickListener() {
+        ivCadastroCFG = (ImageView) findViewById(R.id.ivCadastroCFG);
+        ivCardRecordCFG = (ImageView) findViewById(R.id.ivCardRecordCFG);
+        ivConfWifiCFG = (ImageView) findViewById(R.id.ivConfWifiCFG);
+
+        ivCadastroCFG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(ConfigurationActivity.this, CadastroActivity.class);
@@ -30,7 +33,7 @@ public class ConfigurationActivity extends AppCompatActivity {
             }
         });
 
-        ivConfiguracao.setOnClickListener(new View.OnClickListener() {
+        ivCardRecordCFG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(ConfigurationActivity.this, NetworkConfigurationActivity.class);
@@ -38,12 +41,22 @@ public class ConfigurationActivity extends AppCompatActivity {
             }
         });
 
-        ivCardRecord.setOnClickListener(new View.OnClickListener() {
+        ivConfWifiCFG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(ConfigurationActivity.this, doorLockActivity.class);
                 startActivity(it);
             }
         });
+    }
+
+    public void buttonClicked(View item){
+
+        switch (item.getId()){
+            case R.id.ivBackCFG:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+        }
     }
 }

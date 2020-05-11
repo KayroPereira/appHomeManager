@@ -12,6 +12,7 @@ import com.example.apphomemanager.GeneralUse.ConstantsApp;
 
 public class DashBoardReservoirActivity extends AppCompatActivity {
 
+    private ImageView ivBackDBR;
     private ImageView ivCisternDBR;
     private ImageView ivWaterTankDBR;
 
@@ -20,6 +21,7 @@ public class DashBoardReservoirActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_dash_board_reservoir);
 
+        ivBackDBR = (ImageView) findViewById(R.id.ivBackDBR);
         ivCisternDBR = (ImageView) findViewById(R.id.ivCisternDBR);
         ivWaterTankDBR = (ImageView) findViewById(R.id.ivWaterTankDBR);
 
@@ -42,5 +44,15 @@ public class DashBoardReservoirActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+    }
+
+    public void buttonClickedDBR(View item){
+
+        switch (item.getId()){
+            case R.id.ivBackDBR:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+        }
     }
 }
