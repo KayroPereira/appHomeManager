@@ -1,29 +1,17 @@
 package com.example.apphomemanager;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.example.apphomemanager.Communication.CommFirebase;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-public class DashBoardActivity extends AppCompatActivity {
+public class DashBoardControlActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference();
@@ -32,56 +20,72 @@ public class DashBoardActivity extends AppCompatActivity {
 
     private AlertDialog alerta;
 
-    private ImageView ivDoorLockDB;
-    private ImageView ivControlDB;
-    private ImageView ivReservoirDB;
-    private ImageView ivSetupDB;
+    private ImageView ivLivingRoom;
+    private ImageView ivKitchen;
+    //private ImageView ivConfiguration;
+    //private ImageView ivDoorLock;
+    //private ImageView ivReservoirDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
+        setContentView(R.layout.activity_dash_board_control);
 
-        ivDoorLockDB = (ImageView) findViewById(R.id.ivDoorLockDB);
-        ivControlDB = (ImageView) findViewById(R.id.ivControlDB);
+        ivLivingRoom = (ImageView) findViewById(R.id.ivSalaDBC);
+        ivKitchen = (ImageView) findViewById(R.id.ivCozinhaDBC);
+
+/*
+        ivConfiguration = (ImageView) findViewById(R.id.ivSetupDB);
+        ivDoorLock = (ImageView) findViewById(R.id.ivDoorLockDB);
         ivReservoirDB = (ImageView) findViewById(R.id.ivReservoirDB);
-        ivSetupDB = (ImageView) findViewById(R.id.ivSetupDB);
-
-
-        ivControlDB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(DashBoardActivity.this, DashBoardControlActivity.class);
-                startActivity(it);
-            }
-        });
-
-        ivSetupDB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(DashBoardActivity.this, ConfigurationActivity.class);
-                startActivity(it);
-            }
-        });
 
         ivReservoirDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(DashBoardActivity.this, DashBoardReservoirActivity.class);
+                Intent it = new Intent(DashBoardControlActivity.this, DashBoardReservoirActivity.class);
                 startActivity(it);
             }
         });
 
-        ivDoorLockDB.setOnClickListener(new View.OnClickListener() {
+ */
+
+        ivLivingRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(DashBoardActivity.this);
+                Intent it = new Intent(DashBoardControlActivity.this, LivingRoomActivity.class);
+                startActivity(it);
+            }
+        });
+
+        ivKitchen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(DashBoardControlActivity.this, KitchenActivity.class);
+                startActivity(it);
+            }
+        });
+/*
+        ivConfiguration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(DashBoardControlActivity.this, ConfigurationActivity.class);
+                startActivity(it);
+            }
+        });
+
+ */
+
+        /*
+        ivDoorLock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(DashBoardControlActivity.this);
                 builder.setTitle("Abrir porta de entrada");
                 builder.setMessage("Deseja abrir a porta de entrada?");
                 builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
                         try{
-                            ivDoorLockDB.setImageResource(R.drawable.btlight_on1);
+                            ivDoorLock.setImageResource(R.drawable.btlight_on1);
                             dbOutStatus.child("door").child("d1").setValue(1);
                         }catch (Exception e){
                             Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
@@ -89,9 +93,9 @@ public class DashBoardActivity extends AppCompatActivity {
                     }
                 });
 
-                builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Nã0", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
-                        Toast.makeText(DashBoardActivity.this, "Solicitação cancelada", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DashBoardControlActivity.this, "Solicitação cancelada", Toast.LENGTH_SHORT).show();
                     }
                 });
                 alerta = builder.create();
@@ -103,7 +107,7 @@ public class DashBoardActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //get status component ivDoorLok in firebase
-                ivDoorLockDB.setImageResource(new CommFirebase().getComponentStatus(dataSnapshot, "door", "d1") == 0 ? R.drawable.door : R.drawable.dooron1);
+                ivDoorLock.setImageResource(new CommFirebase().getComponentStatus(dataSnapshot, "door", "d1") == 0 ? R.drawable.btlight1 : R.drawable.btlight_on1);
             }
 
             @Override
@@ -111,6 +115,7 @@ public class DashBoardActivity extends AppCompatActivity {
 
             }
         });
-    }
 
+         */
+    }
 }

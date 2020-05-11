@@ -2,13 +2,13 @@
     <string name="app_name">appHomeManagerV14</string>
     <string name="networkName">HomeManager</string>
 
-    <string name="titleLiving">Living Room</string>
-    <string name="titleKitchen">Kitchen</string>
-    <string name="titleBedRoom1">BedRoom - 1</string>
-    <string name="titleBedRoom2">BebRoom - 2</string>
-    <string name="titleBedRoom3">BebRoom - 3</string>
-    <string name="titleBedRoom4">BebRoom - 4</string>
-    <string name="titleConfiguration">Configuration</string>
+    <string name="titleLiving">Sala</string>
+    <string name="titleKitchen">Cozinha</string>
+    <string name="titleBedRoom1">Quarto - 1</string>
+    <string name="titleBedRoom2">Quarto - 2</string>
+    <string name="titleBedRoom3">Quarto - 3</string>
+    <string name="titleBedRoom4">Quarto - 4</string>
+    <string name="titleConfiguration">Configuração</string>
     <string name="titleDoorLock">Door Lock</string>
     <string name="titleConfigCard">Cadastrar Cartão</string>
 
@@ -70,7 +70,9 @@
     <string name="on">L</string>
     <string name="auto">Auto</string>
     <string name="atual">Atual</string>
+
+    <!-- dash board -->
     <string name="reservatorio">Reservatório</string>
-
-
+    <string name="utilitarios">Utilitários</string>
+    <string name="controle">Controle</string>
 </resources>

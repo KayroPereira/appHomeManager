@@ -7,7 +7,7 @@
     android:background="@drawable/background3"
     android:scrollbars="horizontal|vertical"
     android:verticalScrollbarPosition="defaultPosition"
-    tools:context="com.example.apphomemanager.DashBoardActivity">
+    tools:context="com.example.apphomemanager.DashBoardControlActivity">
 
     <ScrollView
         android:layout_width="match_parent"

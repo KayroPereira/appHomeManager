@@ -14,7 +14,6 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 //import com.example.apphomemanager.GeneralUse.ConstantsApp;
-import com.example.apphomemanager.GeneralUse.ConstantsApp;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Log.d("AUTH", "Login Efetuado com sucesso!!!");
 
-                    Intent it = new Intent(MainActivity.this, DashBoardActivity.class);
+                    Intent it = new Intent(MainActivity.this, DashBoardControlActivity.class);
                     startActivity(it);
                 }
             }

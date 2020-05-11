@@ -2,39 +2,50 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.apphomemanager">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/image"
         android:label="appHomeManager"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".DashBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
-        <activity android:name=".WaterTankSetupActivity"></activity>
-        <activity android:name=".WaterTankActivity"></activity>
-        <activity android:name=".DashBoardReservoirActivity"></activity>
-
-        <!--- android:screenOrientation="fullSensor"-->
-        <activity android:name=".doorLockActivity"
+        <activity
+            android:name=".WaterTankSetupActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".KitchenActivity"
+        <activity
+            android:name=".WaterTankActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".LivingRoomActivity"
+        <activity
+            android:name=".DashBoardReservoirActivity"
+            android:screenOrientation="portrait" /> <!-- - android:screenOrientation="fullSensor" -->
+        <activity
+            android:name=".doorLockActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".DashBoardActivity"
+        <activity
+            android:name=".KitchenActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".CadastroActivity"
+        <activity
+            android:name=".LivingRoomActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".NetworkConfigurationActivity"
+        <activity
+            android:name=".DashBoardControlActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ConfigurationActivity"
+        <activity
+            android:name=".CadastroActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".NetworkConfigurationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ConfigurationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,5 +58,9 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
