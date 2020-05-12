@@ -21,27 +21,29 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LivingRoomActivity extends AppCompatActivity {
 
+    ProgressBar pgBar;
+    ImageView ivLightOnOff;
+
+    ImageView ivBackLVR;
+
+    ImageView ivLight1LVR;
+    ImageView ivLight2LVR;
+    ImageView ivLight3LVR;
+    ImageView ivLight4LVR;
+    ImageView ivLight5LVR;
+    ImageView ivLight6LVR;
+
+    ImageView ivPower1LVR;
+    ImageView ivPower2LVR;
+    ImageView ivPower3LVR;
+    ImageView ivPower4LVR;
+    ImageView ivPower5LVR;
+    ImageView ivPower6LVR;
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference();
 
     final DatabaseReference dbOutStatus = reference;
-
-    ProgressBar pgBar;
-    ImageView ivLightOnOff;
-
-    ImageView ivLight1;
-    ImageView ivLight2;
-    ImageView ivLight3;
-    ImageView ivLight4;
-    ImageView ivLight5;
-    ImageView ivLight6;
-
-    ImageView ivLightPower1;
-    ImageView ivLightPower2;
-    ImageView ivLightPower3;
-    ImageView ivLightPower4;
-    ImageView ivLightPower5;
-    ImageView ivLightPower6;
 
     ComponentStatus statusComponent;// = new ComponentStatus();
 
@@ -50,27 +52,29 @@ public class LivingRoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_living_room);
 
-        pgBar = (ProgressBar) findViewById(R.id.pgBarComm);
+        pgBar = (ProgressBar) findViewById(R.id.pgBarCommLVR);
 
         pgBar.setVisibility(View.VISIBLE);
 
         ivLightOnOff = (ImageView) findViewById(R.id.ivLightOnOff);
 
-        ivLight1 = (ImageView) findViewById(R.id.ivLight1);
-        ivLight2 = (ImageView) findViewById(R.id.ivLight2);
-        ivLight3 = (ImageView) findViewById(R.id.ivLight3);
-        ivLight4 = (ImageView) findViewById(R.id.ivLight4);
-        ivLight5 = (ImageView) findViewById(R.id.ivLight5);
-        ivLight6 = (ImageView) findViewById(R.id.ivLight6);
+        ivBackLVR = (ImageView) findViewById(R.id.ivBackLVR);
 
-        ivLightPower1 = (ImageView) findViewById(R.id.ivLightPower1);
-        ivLightPower2 = (ImageView) findViewById(R.id.ivLightPower2);
-        ivLightPower3 = (ImageView) findViewById(R.id.ivLightPower3);
-        ivLightPower4 = (ImageView) findViewById(R.id.ivLightPower4);
-        ivLightPower5 = (ImageView) findViewById(R.id.ivLightPower5);
-        ivLightPower6 = (ImageView) findViewById(R.id.ivLightPower6);
+        ivLight1LVR = (ImageView) findViewById(R.id.ivLight1LVR);
+        ivLight2LVR = (ImageView) findViewById(R.id.ivLight2LVR);
+        ivLight3LVR = (ImageView) findViewById(R.id.ivLight3LVR);
+        ivLight4LVR = (ImageView) findViewById(R.id.ivLight4LVR);
+        ivLight5LVR = (ImageView) findViewById(R.id.ivLight5LVR);
+        ivLight6LVR = (ImageView) findViewById(R.id.ivLight6LVR);
 
-        ivLightOnOff.setImageResource(R.drawable.btoff1);
+        ivPower1LVR = (ImageView) findViewById(R.id.ivPower1LVR);
+        ivPower2LVR = (ImageView) findViewById(R.id.ivPower2LVR);
+        ivPower3LVR = (ImageView) findViewById(R.id.ivPower3LVR);
+        ivPower4LVR = (ImageView) findViewById(R.id.ivPower4LVR);
+        ivPower5LVR = (ImageView) findViewById(R.id.ivPower5LVR);
+        ivPower6LVR = (ImageView) findViewById(R.id.ivPower6LVR);
+
+        ivLightOnOff.setImageResource(R.drawable.btoff);
         controlComponent(false, 0);
         controlComponent(false, 1);
 
@@ -83,7 +87,7 @@ public class LivingRoomActivity extends AppCompatActivity {
                 try{
                     boolean action = statusComponent.getBtOnOff() == 1 ? false : true;
 
-                    ivLightOnOff.setImageResource(action ? R.drawable.btoff1 : R.drawable.bton1);
+                    ivLightOnOff.setImageResource(action ? R.drawable.btoff : R.drawable.bton);
                     dbOutStatus.child("living").child("lonoff").setValue(action ? 1 : 0);
                     controlComponent(action ? false : true, 1);
                 }catch (Exception e){
@@ -92,156 +96,156 @@ public class LivingRoomActivity extends AppCompatActivity {
             }
         });
 
-        ivLight1.setOnClickListener(new View.OnClickListener() {
+        ivLight1LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getLoutUn(0) == 1 ? false : true;
-                    ivLight1.setImageResource(action ? R.drawable.btlight_on1 : R.drawable.btlight1);
-                    dbOutStatus.child("living").child("light").child("out1").setValue(action ? 1 : 0);
+                    ivLight1LVR.setImageResource(action ? R.drawable.lampadaon : R.drawable.lampadaoff);
+                    dbOutStatus.child("living").child("l").child("o1").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLight2.setOnClickListener(new View.OnClickListener() {
+        ivLight2LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getLoutUn(1) == 1 ? false : true;
-                    ivLight2.setImageResource(action ? R.drawable.btlight_on1 : R.drawable.btlight1);
-                    dbOutStatus.child("living").child("light").child("out2").setValue(action ? 1 : 0);
+                    ivLight2LVR.setImageResource(action ? R.drawable.lampadaon : R.drawable.lampadaoff);
+                    dbOutStatus.child("living").child("l").child("o2").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLight3.setOnClickListener(new View.OnClickListener() {
+        ivLight3LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getLoutUn(2) == 1 ? false : true;
-                    ivLight3.setImageResource(action ? R.drawable.btlight_on1 : R.drawable.btlight1);
-                    dbOutStatus.child("living").child("light").child("out3").setValue(action ? 1 : 0);
+                    ivLight3LVR.setImageResource(action ? R.drawable.lampadaon : R.drawable.lampadaoff);
+                    dbOutStatus.child("living").child("l").child("o3").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLight4.setOnClickListener(new View.OnClickListener() {
+        ivLight4LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getLoutUn(3) == 1 ? false : true;
-                    ivLight4.setImageResource(action ? R.drawable.btlight_on1 : R.drawable.btlight1);
-                    dbOutStatus.child("living").child("light").child("out4").setValue(action ? 1 : 0);
+                    ivLight4LVR.setImageResource(action ? R.drawable.lampadaon : R.drawable.lampadaoff);
+                    dbOutStatus.child("living").child("l").child("o4").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLight5.setOnClickListener(new View.OnClickListener() {
+        ivLight5LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getLoutUn(4) == 1 ? false : true;
-                    ivLight5.setImageResource(action ? R.drawable.btlight_on1 : R.drawable.btlight1);
-                    dbOutStatus.child("living").child("light").child("out5").setValue(action ? 1 : 0);
+                    ivLight5LVR.setImageResource(action ? R.drawable.lampadaon : R.drawable.lampadaoff);
+                    dbOutStatus.child("living").child("l").child("o5").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLight6.setOnClickListener(new View.OnClickListener() {
+        ivLight6LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getLoutUn(5) == 1 ? false : true;
-                    ivLight6.setImageResource(action ? R.drawable.btlight_on1 : R.drawable.btlight1);
-                    dbOutStatus.child("living").child("light").child("out6").setValue(action ? 1 : 0);
+                    ivLight6LVR.setImageResource(action ? R.drawable.lampadaon : R.drawable.lampadaoff);
+                    dbOutStatus.child("living").child("l").child("o6").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLightPower1.setOnClickListener(new View.OnClickListener() {
+        ivPower1LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getPoutUn(0) == 1 ? false : true;
-                    ivLightPower1.setImageResource(action ? R.drawable.tv_on1 : R.drawable.tv1);
-                    dbOutStatus.child("living").child("power").child("out1").setValue(action ? 1 : 0);
+                    ivPower1LVR.setImageResource(action ? R.drawable.tomadaoff : R.drawable.tomadaon);
+                    dbOutStatus.child("living").child("p").child("o1").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLightPower2.setOnClickListener(new View.OnClickListener() {
+        ivPower2LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getPoutUn(1) == 1 ? false : true;
-                    ivLightPower2.setImageResource(action ? R.drawable.sky_on1 : R.drawable.sky1);
-                    dbOutStatus.child("living").child("power").child("out2").setValue(action ? 1 : 0);
+                    ivPower2LVR.setImageResource(action ? R.drawable.tomadaoff : R.drawable.tomadaon);
+                    dbOutStatus.child("living").child("p").child("o2").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLightPower3.setOnClickListener(new View.OnClickListener() {
+        ivPower3LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getPoutUn(2) == 1 ? false : true;
-                    ivLightPower3.setImageResource(action ? R.drawable.som_on1 : R.drawable.som1);
-                    dbOutStatus.child("living").child("power").child("out3").setValue(action ? 1 : 0);
+                    ivPower3LVR.setImageResource(action ? R.drawable.tomadaoff : R.drawable.tomadaon);
+                    dbOutStatus.child("living").child("p").child("o3").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLightPower4.setOnClickListener(new View.OnClickListener() {
+        ivPower4LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getPoutUn(3) == 1 ? false : true;
-                    ivLightPower4.setImageResource(action ? R.drawable.power_on1 : R.drawable.power1);
-                    dbOutStatus.child("living").child("power").child("out4").setValue(action ? 1 : 0);
+                    ivPower4LVR.setImageResource(action ? R.drawable.tomadaoff : R.drawable.tomadaon);
+                    dbOutStatus.child("living").child("p").child("o4").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLightPower5.setOnClickListener(new View.OnClickListener() {
+        ivPower5LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getPoutUn(4) == 1 ? false : true;
-                    ivLightPower5.setImageResource(action ? R.drawable.power_on1 : R.drawable.power1);
-                    dbOutStatus.child("living").child("power").child("out5").setValue(action ? 1 : 0);
+                    ivPower5LVR.setImageResource(action ? R.drawable.tomadaoff : R.drawable.tomadaon);
+                    dbOutStatus.child("living").child("p").child("o5").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ivLightPower6.setOnClickListener(new View.OnClickListener() {
+        ivPower6LVR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
                     boolean action = statusComponent.getPoutUn(5) == 1 ? false : true;
-                    ivLightPower6.setImageResource(action ? R.drawable.power_on1 : R.drawable.power1);
-                    dbOutStatus.child("living").child("power").child("out6").setValue(action ? 1 : 0);
+                    ivPower6LVR.setImageResource(action ? R.drawable.tomadaoff : R.drawable.tomadaon);
+                    dbOutStatus.child("living").child("p").child("o6").setValue(action ? 1 : 0);
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                 }
@@ -253,7 +257,8 @@ public class LivingRoomActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 statusComponent = new CommFirebase().getOutPut(dataSnapshot, "living");
 
-                ViewGroup layout = (ViewGroup) findViewById(R.id.layoutLivingRoom);
+                //ViewGroup layout = (ViewGroup) findViewById(R.id.layoutLivingRoom);
+                ViewGroup layout = (ViewGroup) findViewById(R.id.ctnlPrincipalLVR);
                 for (int i = 0; i < layout.getChildCount(); i++) {
 
                     View comp = layout.getChildAt(i);
@@ -263,58 +268,59 @@ public class LivingRoomActivity extends AppCompatActivity {
                         switch (comp.getId()){
                             case R.id.ivLightOnOff:
                                 boolean action = statusComponent.getBtOnOff() == 1 ? false : true;
-                                ivLightOnOff.setImageResource(action ? R.drawable.btoff1 : R.drawable.bton1);
+                                ivLightOnOff.setImageResource(action ? R.drawable.btoff : R.drawable.bton);
                                 controlComponent(true, 0);
                                 controlComponent(action ? false : true, 1);
                                 pgBar.setVisibility(View.INVISIBLE);
+                                updateStatusComponent();
                                 break;
 
-                            case R.id.ivLight1:
-                                    ivLight1.setImageResource(statusComponent.getLoutUn(0) == 0 ? R.drawable.btlight1 : R.drawable.btlight_on1);
+                            case R.id.ivLight1LVR:
+                                ivLight1LVR.setImageResource(statusComponent.getLoutUn(0) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
                                 break;
 
-                            case R.id.ivLight2:
-                                ivLight2.setImageResource(statusComponent.getLoutUn(1) == 0 ? R.drawable.btlight1 : R.drawable.btlight_on1);
+                            case R.id.ivLight2LVR:
+                                ivLight2LVR.setImageResource(statusComponent.getLoutUn(1) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
                                 break;
 
-                            case R.id.ivLight3:
-                                ivLight3.setImageResource(statusComponent.getLoutUn(2) == 0 ? R.drawable.btlight1 : R.drawable.btlight_on1);
+                            case R.id.ivLight3LVR:
+                                ivLight3LVR.setImageResource(statusComponent.getLoutUn(2) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
                                 break;
 
-                            case R.id.ivLight4:
-                                ivLight4.setImageResource(statusComponent.getLoutUn(3) == 0 ? R.drawable.btlight1 : R.drawable.btlight_on1);
+                            case R.id.ivLight4LVR:
+                                ivLight4LVR.setImageResource(statusComponent.getLoutUn(3) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
                                 break;
 
-                            case R.id.ivLight5:
-                                ivLight5.setImageResource(statusComponent.getLoutUn(4) == 0 ? R.drawable.btlight1 : R.drawable.btlight_on1);
+                            case R.id.ivLight5LVR:
+                                ivLight5LVR.setImageResource(statusComponent.getLoutUn(4) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
                                 break;
 
-                            case R.id.ivLight6:
-                                ivLight6.setImageResource(statusComponent.getLoutUn(5) == 0 ? R.drawable.btlight1 : R.drawable.btlight_on1);
+                            case R.id.ivLight6LVR:
+                                ivLight6LVR.setImageResource(statusComponent.getLoutUn(5) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
                                 break;
 
-                            case R.id.ivLightPower1:
-                                ivLightPower1.setImageResource(statusComponent.getPoutUn(0) == 0 ? R.drawable.tv1 : R.drawable.tv_on1);
+                            case R.id.ivPower1LVR:
+                                ivPower1LVR.setImageResource(statusComponent.getPoutUn(0) == 0 ? R.drawable.tv1 : R.drawable.tv_on1);
                                 break;
 
-                            case R.id.ivLightPower2:
-                                ivLightPower2.setImageResource(statusComponent.getPoutUn(1) == 0 ? R.drawable.sky1 : R.drawable.sky_on1);
+                            case R.id.ivPower2LVR:
+                                ivPower2LVR.setImageResource(statusComponent.getPoutUn(1) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
                                 break;
 
-                            case R.id.ivLightPower3:
-                                ivLightPower3.setImageResource(statusComponent.getPoutUn(2) == 0 ? R.drawable.som1 : R.drawable.som_on1);
+                            case R.id.ivPower3LVR:
+                                ivPower3LVR.setImageResource(statusComponent.getPoutUn(2) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
                                 break;
 
-                            case R.id.ivLightPower4:
-                                ivLightPower4.setImageResource(statusComponent.getPoutUn(3) == 0 ? R.drawable.power1 : R.drawable.power_on1);
+                            case R.id.ivPower4LVR:
+                                ivPower4LVR.setImageResource(statusComponent.getPoutUn(3) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
                                 break;
 
-                            case R.id.ivLightPower5:
-                                ivLightPower5.setImageResource(statusComponent.getPoutUn(4) == 0 ? R.drawable.power1 : R.drawable.power_on1);
+                            case R.id.ivPower5LVR:
+                                ivPower5LVR.setImageResource(statusComponent.getPoutUn(4) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
                                 break;
 
-                            case R.id.ivLightPower6:
-                                ivLightPower6.setImageResource(statusComponent.getPoutUn(5) == 0 ? R.drawable.power1 : R.drawable.power_on1);
+                            case R.id.ivPower6LVR:
+                                ivPower6LVR.setImageResource(statusComponent.getPoutUn(5) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
                                 break;
                         }
                     }
@@ -329,27 +335,66 @@ public class LivingRoomActivity extends AppCompatActivity {
     }
 
     private void controlComponent(boolean status, int mode){
-
         switch(mode) {
             case 0:
                 ivLightOnOff.setEnabled(status);
                 break;
 
             case 1:
-                ivLight1.setEnabled(status);
-                ivLight2.setEnabled(status);
-                ivLight3.setEnabled(status);
-                ivLight4.setEnabled(status);
-                ivLight5.setEnabled(status);
-                ivLight6.setEnabled(status);
+                ivLight1LVR.setEnabled(status);
+                ivLight2LVR.setEnabled(status);
+                ivLight3LVR.setEnabled(status);
+                ivLight4LVR.setEnabled(status);
+                ivLight5LVR.setEnabled(status);
+                ivLight6LVR.setEnabled(status);
 
-                ivLightPower1.setEnabled(status);
-                ivLightPower2.setEnabled(status);
-                ivLightPower3.setEnabled(status);
-                ivLightPower4.setEnabled(status);
-                ivLightPower5.setEnabled(status);
-                ivLightPower6.setEnabled(status);
+                ivPower1LVR.setEnabled(status);
+                ivPower2LVR.setEnabled(status);
+                ivPower3LVR.setEnabled(status);
+                ivPower4LVR.setEnabled(status);
+                ivPower5LVR.setEnabled(status);
+                ivPower6LVR.setEnabled(status);
                 break;
+        }
+    }
+
+    public void buttonClickedLVR(View item){
+
+        switch (item.getId()){
+            case R.id.ivBackLVR:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+        }
+    }
+
+    public void updateStatusComponent(){
+        if (statusComponent.getBtOnOff() != 0) {
+            ivLight1LVR.setImageResource(statusComponent.getLoutUn(0) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
+            ivLight2LVR.setImageResource(statusComponent.getLoutUn(1) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
+            ivLight3LVR.setImageResource(statusComponent.getLoutUn(2) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
+            ivLight4LVR.setImageResource(statusComponent.getLoutUn(3) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
+            ivLight5LVR.setImageResource(statusComponent.getLoutUn(4) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
+            ivLight6LVR.setImageResource(statusComponent.getLoutUn(5) == 0 ? R.drawable.lampadaoff : R.drawable.lampadaon);
+            ivPower1LVR.setImageResource(statusComponent.getPoutUn(0) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
+            ivPower2LVR.setImageResource(statusComponent.getPoutUn(1) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
+            ivPower3LVR.setImageResource(statusComponent.getPoutUn(2) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
+            ivPower4LVR.setImageResource(statusComponent.getPoutUn(3) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
+            ivPower5LVR.setImageResource(statusComponent.getPoutUn(4) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
+            ivPower6LVR.setImageResource(statusComponent.getPoutUn(5) == 0 ? R.drawable.tomadaoff : R.drawable.tomadaon);
+        }else{
+            ivLight1LVR.setImageResource(R.drawable.lampadaoff);
+            ivLight2LVR.setImageResource(R.drawable.lampadaoff);
+            ivLight3LVR.setImageResource(R.drawable.lampadaoff);
+            ivLight4LVR.setImageResource(R.drawable.lampadaoff);
+            ivLight5LVR.setImageResource(R.drawable.lampadaoff);
+            ivLight6LVR.setImageResource(R.drawable.lampadaoff);
+            ivPower1LVR.setImageResource(R.drawable.tomadaoff);
+            ivPower2LVR.setImageResource(R.drawable.tomadaoff);
+            ivPower3LVR.setImageResource(R.drawable.tomadaoff);
+            ivPower4LVR.setImageResource(R.drawable.tomadaoff);
+            ivPower5LVR.setImageResource(R.drawable.tomadaoff);
+            ivPower6LVR.setImageResource(R.drawable.tomadaoff);
         }
     }
 }

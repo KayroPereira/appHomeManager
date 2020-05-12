@@ -20,16 +20,16 @@ public class CommFirebase {
         try {
             outPuts.setBtOnOff(Byte.parseByte(dataSnapshot.child(room).child("lonoff").getValue().toString()));
 
-            for (int i = 0; i < dataSnapshot.child(room).child("light").getChildrenCount()-1; i++) {
+            for (int i = 0; i < dataSnapshot.child(room).child("l").getChildrenCount()-1; i++) {
                 if (outPuts.getBtOnOff() !=0)
-                    outPuts.setLoutUn(Byte.parseByte(dataSnapshot.child(room).child("light").child("out" + (i + 1)).getValue().toString()));
+                    outPuts.setLoutUn(Byte.parseByte(dataSnapshot.child(room).child("l").child("o" + (i + 1)).getValue().toString()));
                 else
                     outPuts.setLoutUn((byte) 0);
             }
 
-            for (int i = 0; i < dataSnapshot.child(room).child("power").getChildrenCount()-1; i++) {
+            for (int i = 0; i < dataSnapshot.child(room).child("p").getChildrenCount()-1; i++) {
                 if (outPuts.getBtOnOff() !=0)
-                    outPuts.setPoutUn(Byte.parseByte(dataSnapshot.child(room).child("power").child("out" + (i + 1)).getValue().toString()));
+                    outPuts.setPoutUn(Byte.parseByte(dataSnapshot.child(room).child("p").child("o" + (i + 1)).getValue().toString()));
                 else
                     outPuts.setPoutUn((byte) 0);
             }

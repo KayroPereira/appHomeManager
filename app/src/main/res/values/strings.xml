@@ -14,6 +14,19 @@
     <string name="wifi">Wifi</string>
     <string name="rfid">RFID</string>
 
+    <!-- lampadas -->
+    <string name="l1LVR">Rua</string>
+    <string name="l2LVR">Escada</string>
+    <string name="l3LVR">Entrada</string>
+    <string name="l4LVR">Spot</string>
+    <string name="l5LVR">Sala</string>
+    <string name="l6LVR">Bar</string>
+
+    <!-- tomadas -->
+    <string name="t1LVR">Tv</string>
+    <string name="t2LVR">Sky</string>
+    <string name="t3LVR">Som</string>
+    <string name="t4LVR">Geral</string>
 
     <!-- status -->
     <string name="status">Status</string>
@@ -55,8 +68,8 @@
     <string name="registroOk">Registro realizado com sucesso</string>
     <string name="networkOk">Rede configurada com sucesso</string>
 
-    <string name="light">Light</string>
-    <string name="power">Power</string>
+    <string name="light">Lâmpadas</string>
+    <string name="power">Tomadas</string>
 
     <string name="ssid">SSID:</string>
     <string name="unidentified">unidentified</string>
