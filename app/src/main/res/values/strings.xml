@@ -90,4 +90,6 @@
     <string name="reservatorio">Reservatório</string>
     <string name="utilitarios">Utilitários</string>
     <string name="controle">Controle</string>
+    <string name="cidade">Cidade</string>
+    <string name="strNull">null</string>
 </resources>

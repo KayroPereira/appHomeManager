@@ -8,6 +8,11 @@ public class ConstantsApp {
     final int HIGH = 1;
     final int AUTO = 2;
 
+    final String climaStatus[] = {"storm", "snow", "hail", "rain", "fog", "clear_day", "clear_night", "cloud", "cloudly_day", "cloudly_night", "none_day", "none_night"};
+    final String climaImages[] = {"storm", "snow", "snow", "rain", "fog", "clear_day", "clear_night", "cloudly_day", "cloudly_day", "cloudly_night", "none_day", "none_night"};
+
+    final String temperaturaImages[] = {"tlow", "taverage", "thigh"};
+
     final String pathReservoir[] = {"cix1", "cx1"};
     final String pathStatusDevice[] = {"/sp1", "/sv1"};
     final String pathDeviceSet[] = {"/p1s", "/v1s"};
@@ -21,6 +26,18 @@ public class ConstantsApp {
     final int imageLength = 20;
 
     final String erros[] = {"erro1", "erro2", "erro3"};
+
+    public String[] getTemperaturaImages() {
+        return temperaturaImages;
+    }
+
+    public String[] getClimaStatus() {
+        return climaStatus;
+    }
+
+    public String[] getClimaImages() {
+        return climaImages;
+    }
 
     public String[] getImagePath() {
         return imagePath;
