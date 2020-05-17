@@ -21,7 +21,7 @@
         <ImageView
             android:id="@+id/ivSetupWT"
             android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_height="0dp"
             android:layout_marginEnd="5dp"
             android:onClick="buttonClickedWT"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         <ImageView
             android:id="@+id/ivBackWT"
             android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_height="0dp"
             android:layout_marginStart="5dp"
             android:onClick="buttonClickedWT"
             app:layout_constraintBottom_toBottomOf="parent"

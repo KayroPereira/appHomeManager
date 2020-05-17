@@ -53,7 +53,7 @@
                 <ImageView
                     android:id="@+id/ivBackCFG"
                     android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_height="0dp"
                     android:layout_marginStart="5dp"
                     android:onClick="buttonClicked"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -156,6 +156,7 @@
                     android:id="@+id/ctCardRecordCFG"
                     android:layout_width="100dp"
                     android:layout_height="70dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline17"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline16"
                     app:layout_constraintTop_toTopOf="parent">

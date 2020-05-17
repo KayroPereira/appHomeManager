@@ -28,6 +28,7 @@ import com.google.android.gms.tasks.Task;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
 import android.view.View;
@@ -53,6 +54,8 @@ public class DashBoardActivity extends AppCompatActivity {
     private FusedLocationProviderClient fusedLocationClient;
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
+
+    private ConstraintLayout constraintLayout10;
 
     private ImageView ivDoorLockDB;
     private ImageView ivControlDB;
@@ -88,6 +91,8 @@ public class DashBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
+        constraintLayout10 = (ConstraintLayout) findViewById(R.id.constraintLayout10);
+
         ivDoorLockDB = (ImageView) findViewById(R.id.ivDoorLockDB);
         ivControlDB = (ImageView) findViewById(R.id.ivControlDB);
         ivReservoirDB = (ImageView) findViewById(R.id.ivReservoirDB);
@@ -108,6 +113,8 @@ public class DashBoardActivity extends AppCompatActivity {
         tvTempH_L2 = (TextView) findViewById(R.id.tvTempH_L2);
         tvDay3 = (TextView) findViewById(R.id.tvDay3);
         tvTempH_L3 = (TextView) findViewById(R.id.tvTempH_L3);
+
+        setStatusComponentes(false);
 
         iniciarLocalizacao();
 
@@ -292,6 +299,8 @@ public class DashBoardActivity extends AppCompatActivity {
                 if (result != null ) {
                     String temp = "";
 
+                    setStatusComponentes(true);
+
                     clima.setCityName(result.getCityName());
                     clima.setDate(result.getDate());
                     clima.setTemp(result.getTemp());
@@ -342,6 +351,14 @@ public class DashBoardActivity extends AppCompatActivity {
         });
         downloadJson.execute("https://api.hgbrasil.com/weather?array_limit=4&fields=only_results,humidity,temp,city_name,forecast,condition_slug,condition,weekday,max,min,date&lat=" +
                 localizacao.getLatitude() + "&log=" + localizacao.getLongitude() + "&user_ip=remote&key=bdda2060");
+    }
+
+    private void setStatusComponentes(boolean status){
+
+        if (status)
+            constraintLayout10.setVisibility(View.VISIBLE);
+        else
+            constraintLayout10.setVisibility(View.INVISIBLE);
     }
 
     private int getClimaStatusValue(String climaStatus){

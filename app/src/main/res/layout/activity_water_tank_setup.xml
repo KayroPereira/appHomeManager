@@ -30,7 +30,7 @@
                 <ImageView
                     android:id="@+id/ivBackWTS"
                     android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_height="0dp"
                     android:layout_marginStart="5dp"
                     android:onClick="buttonClicked"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +41,7 @@
                 <ImageView
                     android:id="@+id/ivSendWTS"
                     android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_height="0dp"
                     android:layout_marginEnd="5dp"
                     android:onClick="buttonClicked"
                     app:layout_constraintBottom_toBottomOf="parent"
