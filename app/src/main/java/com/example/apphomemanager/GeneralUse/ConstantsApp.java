@@ -7,6 +7,18 @@ public class ConstantsApp {
     final int LOW = 0;
     final int HIGH = 1;
     final int AUTO = 2;
+    final int LIVING = 0;
+    final int KITCHEN = 1;
+    final int LIGHT = 0;
+    final int POWER = 1;
+
+    final String pathComodo[] = {"living", "kitchen"};
+    final String pathComodoOutType[] = {"/l", "/p"};
+    final String pathComodoOut[] = {"/o1", "/o2", "/o3", "/o4", "/o5", "/o6", "/o7", "/o8", "/o9", "/o10", "/o11", "/o12", "/o13", "/o14", "/o15", "/o16" };
+
+    final String pathImageDeviceButton[] = {"btoff", "bton"};
+    final String pathImageDeviceLight[] = {"lampadaoff", "lampadaon"};
+    final String pathImageDevicePower[] = {"tomadaoff", "tomadaon"};
 
     final String climaStatus[] = {"storm", "snow", "hail", "rain", "fog", "clear_day", "clear_night", "cloud", "cloudly_day", "cloudly_night", "none_day", "none_night"};
     final String climaImages[] = {"storm", "snow", "snow", "rain", "fog", "clear_day", "clear_night", "cloudly_day", "cloudly_day", "cloudly_night", "none_day", "none_night"};
@@ -27,8 +39,48 @@ public class ConstantsApp {
 
     final String erros[] = {"erro1", "erro2", "erro3"};
 
+    public int getLIGHT() {
+        return LIGHT;
+    }
+
+    public int getPOWER() {
+        return POWER;
+    }
+
+    public String[] getPathImageDevicePower() {
+        return pathImageDevicePower;
+    }
+
+    public String[] getPathImageDeviceLight() {
+        return pathImageDeviceLight;
+    }
+
+    public int getLIVING() {
+        return LIVING;
+    }
+
+    public int getKITCHEN() {
+        return KITCHEN;
+    }
+
+    public String[] getPathImageDeviceButton() {
+        return pathImageDeviceButton;
+    }
+
     public String[] getTemperaturaImages() {
         return temperaturaImages;
+    }
+
+    public String[] getPathComodo() {
+        return pathComodo;
+    }
+
+    public String[] getPathComodoOutType() {
+        return pathComodoOutType;
+    }
+
+    public String[] getPathComodoOut() {
+        return pathComodoOut;
     }
 
     public String[] getClimaStatus() {
