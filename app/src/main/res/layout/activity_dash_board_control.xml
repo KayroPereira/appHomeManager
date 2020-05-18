@@ -69,7 +69,7 @@
                     app:layout_constraintTop_toBottomOf="@id/guideline13">
 
                     <ImageView
-                        android:id="@+id/ivQuarto2DBC"
+                        android:id="@+id/ivBeedRoom2DBC"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +88,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@+id/ivQuarto2DBC"
+                        app:layout_constraintBottom_toTopOf="@+id/ivBeedRoom2DBC"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -105,7 +105,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/ivQuarto1DBC"
+                        android:id="@+id/ivBeedRoom1DBC"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@+id/ivQuarto1DBC"
+                        app:layout_constraintBottom_toTopOf="@+id/ivBeedRoom1DBC"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -175,7 +175,7 @@
                     app:layout_constraintTop_toBottomOf="@id/guideline13">
 
                     <ImageView
-                        android:id="@+id/ivQuarto4DBC"
+                        android:id="@+id/ivBeedRoom4DBC"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -194,7 +194,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@+id/ivQuarto4DBC"
+                        app:layout_constraintBottom_toTopOf="@+id/ivBeedRoom4DBC"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -210,7 +210,7 @@
                     app:layout_constraintTop_toBottomOf="@id/guideline13">
 
                     <ImageView
-                        android:id="@+id/ivQuarto3DBC"
+                        android:id="@+id/ivBeedRoom3DBC"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -229,7 +229,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@+id/ivQuarto3DBC"
+                        app:layout_constraintBottom_toTopOf="@+id/ivBeedRoom3DBC"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

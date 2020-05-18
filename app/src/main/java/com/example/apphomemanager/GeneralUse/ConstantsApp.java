@@ -4,15 +4,21 @@ public class ConstantsApp {
 
     final int CISTERN = 0;
     final int WATER_TANK = 1;
+
     final int LOW = 0;
     final int HIGH = 1;
     final int AUTO = 2;
+
     final int LIVING = 0;
     final int KITCHEN = 1;
+    final int BEEDROOM1 = 2;
+    final int BEEDROOM2 = 3;
+    final int BEEDROOM3 = 4;
+
     final int LIGHT = 0;
     final int POWER = 1;
 
-    final String pathComodo[] = {"living", "kitchen"};
+    final String pathComodo[] = {"living", "kitchen", "beedroom1", "beedroom2", "beedroom3"};
     final String pathComodoOutType[] = {"/l", "/p"};
     final String pathComodoOut[] = {"/o1", "/o2", "/o3", "/o4", "/o5", "/o6", "/o7", "/o8", "/o9", "/o10", "/o11", "/o12", "/o13", "/o14", "/o15", "/o16" };
 
@@ -38,6 +44,18 @@ public class ConstantsApp {
     final int imageLength = 20;
 
     final String erros[] = {"erro1", "erro2", "erro3"};
+
+    public int getBEEDROOM1() {
+        return BEEDROOM1;
+    }
+
+    public int getBEEDROOM2() {
+        return BEEDROOM2;
+    }
+
+    public int getBEEDROOM3() {
+        return BEEDROOM3;
+    }
 
     public int getLIGHT() {
         return LIGHT;

@@ -23,6 +23,9 @@ public class DashBoardControlActivity extends AppCompatActivity {
     private ImageView ivBackDBC;
     private ImageView ivLivingRoom;
     private ImageView ivKitchen;
+    private ImageView ivBeedRoom1;
+    private ImageView ivBeedRoom2;
+    private ImageView ivBeedRoom3;
 
     //private ImageView ivConfiguration;
     //private ImageView ivDoorLock;
@@ -36,6 +39,9 @@ public class DashBoardControlActivity extends AppCompatActivity {
         ivLivingRoom = (ImageView) findViewById(R.id.ivSalaDBC);
         ivKitchen = (ImageView) findViewById(R.id.ivCozinhaDBC);
         ivBackDBC = (ImageView) findViewById(R.id.ivBackDBC);
+        ivBeedRoom1 = (ImageView) findViewById(R.id.ivBeedRoom1DBC);
+        ivBeedRoom2 = (ImageView) findViewById(R.id.ivBeedRoom2DBC);
+        ivBeedRoom3 = (ImageView) findViewById(R.id.ivBeedRoom3DBC);
 
 /*
         ivConfiguration = (ImageView) findViewById(R.id.ivSetupDB);
@@ -64,6 +70,30 @@ public class DashBoardControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(DashBoardControlActivity.this, KitchenRoomActivity.class);
+                startActivity(it);
+            }
+        });
+
+        ivBeedRoom1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(DashBoardControlActivity.this, BeedRoom1Activity.class);
+                startActivity(it);
+            }
+        });
+
+        ivBeedRoom2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(DashBoardControlActivity.this, BeedRoom2Activity.class);
+                startActivity(it);
+            }
+        });
+
+        ivBeedRoom3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(DashBoardControlActivity.this, BeedRoom3Activity.class);
                 startActivity(it);
             }
         });

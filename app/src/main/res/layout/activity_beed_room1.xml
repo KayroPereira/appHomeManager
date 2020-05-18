@@ -2,13 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutKitchen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background3"
     android:scrollbars="horizontal|vertical"
     android:verticalScrollbarPosition="defaultPosition"
-    tools:context="com.example.apphomemanager.KitchenRoomActivity">
+    tools:context="com.example.apphomemanager.BeedRoom1Activity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,31 +19,30 @@
             android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout5KTR"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintBottom_toTopOf="@+id/guideline1BDR1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/ivBackKTR"
+                    android:id="@+id/ivBackBDR1"
                     android:layout_width="25dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="5dp"
-                    android:onClick="buttonClickedKTR"
+                    android:onClick="buttonClickedBDR1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/back" />
 
                 <TextView
-                    android:id="@+id/tvKitchenRoomTitle"
+                    android:id="@+id/tvTitleBDR1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:text="@string/titleKitchen"
+                    android:text="@string/titleBedRoom1"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp"
@@ -53,7 +51,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
-                    android:id="@+id/dividerKTR"
+                    android:id="@+id/dividerBDR1"
                     android:layout_width="0dp"
                     android:layout_height="2dp"
                     android:background="?android:attr/listDivider"
@@ -66,183 +64,111 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/ctnlPrincipalKTR"
+                android:id="@+id/ctnlPrincipalBDR1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/guideline3">
+                app:layout_constraintTop_toBottomOf="@id/guideline1BDR1">
 
                 <ImageView
-                    android:id="@+id/ivOnOffKTR"
+                    android:id="@+id/ivOnOffBDR1"
                     android:layout_width="80dp"
                     android:layout_height="0dp"
-                    android:onClick="buttonClickedKTR"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                    android:onClick="buttonClickedBDR1"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline2BDR1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/btoff" />
 
                 <ProgressBar
-                    android:id="@+id/pgBarCommKTR"
+                    android:id="@+id/pgBarCommBDR1"
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline29" />
+                    app:layout_constraintTop_toTopOf="@+id/guideline5BDR1" />
 
                 <TextView
-                    android:id="@+id/tvKitchenLight"
+                    android:id="@+id/tvLightBDR1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/light"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline4"
-                    app:layout_constraintEnd_toStartOf="@+id/ivOnOffKTR"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline2BDR1"
+                    app:layout_constraintEnd_toStartOf="@+id/ivOnOffBDR1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tvKitchenPower"
+                    android:id="@+id/tvPowerBDR1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/power"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline27"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline4BDR1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline34" />
+                    app:layout_constraintTop_toTopOf="@+id/guideline3BDR1" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline34"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline3BDR1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline4">
+                    app:layout_constraintTop_toTopOf="@+id/guideline2BDR1">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctLight1KTR"
+                        android:id="@+id/ctLight1BDR1"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline35"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelineLG2BDR1"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineLG1BDR1"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/ivLight1KTR"
+                            android:id="@+id/ivLight1BDR1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
+                            android:onClick="buttonClickedBDR1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvLight1KTR"
+                            app:layout_constraintTop_toBottomOf="@+id/tvLight1BDR1"
                             app:srcCompat="@drawable/lampadaoff" />
 
                         <TextView
-                            android:id="@+id/tvLight1KTR"
+                            android:id="@+id/tvLight1BDR1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/l1KTR"
+                            android:text="@string/l1BDR1"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivLight1KTR"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctLight2KTR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline36"
-                        app:layout_constraintStart_toStartOf="@+id/guideline35"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <ImageView
-                            android:id="@+id/ivLight2KTR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvLight2KTR"
-                            app:srcCompat="@drawable/lampadaoff" />
-
-                        <TextView
-                            android:id="@+id/tvLight2KTR"
-                            android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:text="@string/l2KTR"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/background_light"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivLight2KTR"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctLight3KTR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/guideline36"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <ImageView
-                            android:id="@+id/ivLight3KTR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvLight3KTR"
-                            app:srcCompat="@drawable/lampadaoff" />
-
-                        <TextView
-                            android:id="@+id/tvLight3KTR"
-                            android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:text="@string/l3KTR"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/background_light"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivLight3KTR"
+                            app:layout_constraintBottom_toTopOf="@+id/ivLight1BDR1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline35"
+                        android:id="@+id/guidelineLG1BDR1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         app:layout_constraintGuide_percent="0.33" />
 
                     <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline36"
+                        android:id="@+id/guidelineLG2BDR1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -252,389 +178,318 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline29"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline5BDR1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline27"
+                    app:layout_constraintTop_toTopOf="@+id/guideline4BDR1"
                     app:layout_constraintVertical_bias="1.0">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower1KTR"
+                        android:id="@+id/ctPower1BDR1"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline38"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline37"
+                        app:layout_constraintBottom_toTopOf="@+id/guidelinePW3BDR1"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelinePW1BDR1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/ivPower1KTR"
+                            android:id="@+id/ivPower1BDR1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
+                            android:onClick="buttonClickedBDR1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower1KTR"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPower1BDR1"
                             app:srcCompat="@drawable/tomadaoff" />
 
                         <TextView
-                            android:id="@+id/tvPower1KTR"
+                            android:id="@+id/tvPower1BDR1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/t1KTR"
+                            android:text="@string/t1BDR1"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower1KTR"
+                            app:layout_constraintBottom_toTopOf="@+id/ivPower1BDR1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower2KTR"
+                        android:id="@+id/ctPower2BDR1"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline38"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline40"
-                        app:layout_constraintStart_toStartOf="@+id/guideline37"
+                        app:layout_constraintBottom_toTopOf="@+id/guidelinePW3BDR1"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelinePW2BDR1"
+                        app:layout_constraintStart_toStartOf="@+id/guidelinePW1BDR1"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/ivPower2KTR"
+                            android:id="@+id/ivPower2BDR1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
+                            android:onClick="buttonClickedBDR1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower2KTR"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPower2BDR1"
                             app:srcCompat="@drawable/tomadaoff" />
 
                         <TextView
-                            android:id="@+id/tvPower2KTR"
+                            android:id="@+id/tvPower2BDR1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/t2KTR"
+                            android:text="@string/t2BDR1"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower2KTR"
+                            app:layout_constraintBottom_toTopOf="@+id/ivPower2BDR1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower3KTR"
+                        android:id="@+id/ctPower3BDR1"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline38"
+                        app:layout_constraintBottom_toTopOf="@+id/guidelinePW3BDR1"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/guideline40"
+                        app:layout_constraintStart_toEndOf="@id/guidelinePW2BDR1"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/ivPower3KTR"
+                            android:id="@+id/ivPower3BDR1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
+                            android:onClick="buttonClickedBDR1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower3KTR"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPower3BDR1"
                             app:srcCompat="@drawable/tomadaoff" />
 
                         <TextView
-                            android:id="@+id/tvPower3KTR"
+                            android:id="@+id/tvPower3BDR1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/t3KTR"
+                            android:text="@string/t3BDR1"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower3KTR"
+                            app:layout_constraintBottom_toTopOf="@+id/ivPower3BDR1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower4KTR"
+                        android:id="@+id/ctPower4BDR1"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline39"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline37"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline39BDR1"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelinePW1BDR1"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/guideline38">
+                        app:layout_constraintTop_toTopOf="@+id/guidelinePW3BDR1">
 
                         <ImageView
-                            android:id="@+id/ivPower4KTR"
+                            android:id="@+id/ivPower4BDR1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
+                            android:onClick="buttonClickedBDR1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower4KTR"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPower4BDR1"
                             app:srcCompat="@drawable/tomadaoff" />
 
                         <TextView
-                            android:id="@+id/tvPower4KTR"
+                            android:id="@+id/tvPower4BDR1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/t4KTR"
+                            android:text="@string/t4BDR1"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower4KTR"
+                            app:layout_constraintBottom_toTopOf="@+id/ivPower4BDR1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower5KTR"
+                        android:id="@+id/ctPower5BDR1"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline39"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline40"
-                        app:layout_constraintStart_toStartOf="@+id/guideline37"
-                        app:layout_constraintTop_toTopOf="@+id/guideline38">
+                        app:layout_constraintBottom_toTopOf="@+id/guideline39BDR1"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelinePW2BDR1"
+                        app:layout_constraintStart_toStartOf="@+id/guidelinePW1BDR1"
+                        app:layout_constraintTop_toTopOf="@+id/guidelinePW3BDR1">
 
                         <ImageView
-                            android:id="@+id/ivPower5KTR"
+                            android:id="@+id/ivPower5BDR1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
+                            android:onClick="buttonClickedBDR1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower5KTR"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPower5BDR1"
                             app:srcCompat="@drawable/tomadaoff" />
 
                         <TextView
-                            android:id="@+id/tvPower5KTR"
+                            android:id="@+id/tvPower5BDR1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/t5KTR"
+                            android:text="@string/t5BDR1"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower5KTR"
+                            app:layout_constraintBottom_toTopOf="@+id/ivPower5BDR1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower6KTR"
+                        android:id="@+id/ctPower6BDR1"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline39"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline39BDR1"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/guideline40"
-                        app:layout_constraintTop_toTopOf="@+id/guideline38">
+                        app:layout_constraintStart_toStartOf="@+id/guidelinePW2BDR1"
+                        app:layout_constraintTop_toTopOf="@+id/guidelinePW3BDR1">
 
                         <ImageView
-                            android:id="@+id/ivPower6KTR"
+                            android:id="@+id/ivPower6BDR1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
+                            android:onClick="buttonClickedBDR1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower6KTR"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPower6BDR1"
                             app:srcCompat="@drawable/tomadaoff" />
 
                         <TextView
-                            android:id="@+id/tvPower6KTR"
+                            android:id="@+id/tvPower6BDR1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/t1LVR"
+                            android:text="@string/t6BDR1"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower6KTR"
+                            app:layout_constraintBottom_toTopOf="@+id/ivPower6BDR1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower7KTR"
+                        android:id="@+id/ctPower7BDR1"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline37"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/guideline39">
+                        app:layout_constraintEnd_toStartOf="@+id/guidelinePW2BDR1"
+                        app:layout_constraintStart_toStartOf="@+id/guidelinePW1BDR1"
+                        app:layout_constraintTop_toTopOf="@+id/guideline39BDR1">
 
                         <ImageView
-                            android:id="@+id/ivPower7KTR"
+                            android:id="@+id/ivPower7BDR1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
+                            android:onClick="buttonClickedBDR1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower7KTR"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPower7BDR1"
                             app:srcCompat="@drawable/tomadaoff" />
 
                         <TextView
-                            android:id="@+id/tvPower7KTR"
+                            android:id="@+id/tvPower7BDR1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/t1LVR"
+                            android:text="@string/t7BDR1"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower7KTR"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower8KTR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline40"
-                        app:layout_constraintStart_toStartOf="@+id/guideline37"
-                        app:layout_constraintTop_toTopOf="@+id/guideline39">
-
-                        <ImageView
-                            android:id="@+id/ivPower8KTR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower8KTR"
-                            app:srcCompat="@drawable/tomadaoff" />
-
-                        <TextView
-                            android:id="@+id/tvPower8KTR"
-                            android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:text="@string/t1LVR"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/background_light"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower8KTR"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/ctPower9KTR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/guideline40"
-                        app:layout_constraintTop_toTopOf="@+id/guideline39">
-
-                        <ImageView
-                            android:id="@+id/ivPower9KTR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:onClick="buttonClickedKTR"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvPower9KTR"
-                            app:srcCompat="@drawable/tomadaoff" />
-
-                        <TextView
-                            android:id="@+id/tvPower9KTR"
-                            android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:text="@string/t1LVR"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/background_light"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toTopOf="@+id/ivPower9KTR"
+                            app:layout_constraintBottom_toTopOf="@+id/ivPower7BDR1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline37"
+                        android:id="@+id/guidelinePW1BDR1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         app:layout_constraintGuide_percent="0.33" />
 
                     <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline38"
+                        android:id="@+id/guidelinePW2BDR1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.66" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelinePW3BDR1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         app:layout_constraintGuide_percent="0.33" />
 
                     <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline39"
+                        android:id="@+id/guideline39BDR1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         app:layout_constraintGuide_percent="0.66" />
 
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline40"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintGuide_percent="0.66" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline4"
+                    android:id="@+id/guideline2BDR1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.1" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline34"
+                    android:id="@+id/guideline3BDR1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.25" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline27"
+                    android:id="@+id/guideline4BDR1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.35" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline29"
+                    android:id="@+id/guideline5BDR1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -643,7 +498,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline3"
+                android:id="@+id/guideline1BDR1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -651,5 +506,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
