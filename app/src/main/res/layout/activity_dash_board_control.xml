@@ -69,7 +69,7 @@
                     app:layout_constraintTop_toBottomOf="@id/guideline13">
 
                     <ImageView
-                        android:id="@+id/ivBeedRoom2DBC"
+                        android:id="@+id/ivBedRoom2DBC"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +88,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@+id/ivBeedRoom2DBC"
+                        app:layout_constraintBottom_toTopOf="@+id/ivBedRoom2DBC"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -105,7 +105,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/ivBeedRoom1DBC"
+                        android:id="@+id/ivBedRoom1DBC"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@+id/ivBeedRoom1DBC"
+                        app:layout_constraintBottom_toTopOf="@+id/ivBedRoom1DBC"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -175,7 +175,7 @@
                     app:layout_constraintTop_toBottomOf="@id/guideline13">
 
                     <ImageView
-                        android:id="@+id/ivBeedRoom4DBC"
+                        android:id="@+id/ivBedRoom4DBC"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -194,7 +194,106 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@+id/ivBeedRoom4DBC"
+                        app:layout_constraintBottom_toTopOf="@+id/ivBedRoom4DBC"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctBanheiro1DBC"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline41"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline8">
+
+                    <ImageView
+                        android:id="@+id/ivBanheiro1DBC"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBanheiro1DBC"
+                        app:srcCompat="@drawable/banheiro" />
+
+                    <TextView
+                        android:id="@+id/tvBanheiro1DBC"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/titleBathRoom1"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctBanheiro2DBC"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline41"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/guideline8">
+
+                    <ImageView
+                        android:id="@+id/ivBanheiro2DBC"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBanheiro2DBC"
+                        app:srcCompat="@drawable/banheiro" />
+
+                    <TextView
+                        android:id="@+id/tvBanheiro2DBC"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/titleBathRoom2"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctHallDBC"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline41"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline7"
+                    app:layout_constraintTop_toTopOf="@+id/guideline8">
+
+                    <ImageView
+                        android:id="@+id/ivHallDBC"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvHallDBC"
+                        app:srcCompat="@drawable/hall" />
+
+                    <TextView
+                        android:id="@+id/tvHallDBC"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/titleHall"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -210,7 +309,7 @@
                     app:layout_constraintTop_toBottomOf="@id/guideline13">
 
                     <ImageView
-                        android:id="@+id/ivBeedRoom3DBC"
+                        android:id="@+id/ivBedRoom3DBC"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -229,7 +328,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@+id/ivBeedRoom3DBC"
+                        app:layout_constraintBottom_toTopOf="@+id/ivBedRoom3DBC"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -297,6 +396,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.15" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.45" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

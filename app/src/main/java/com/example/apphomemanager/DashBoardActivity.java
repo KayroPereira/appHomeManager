@@ -183,7 +183,7 @@ public class DashBoardActivity extends AppCompatActivity {
                 builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
                         try{
-                            ivDoorLockDB.setImageResource(R.drawable.btlight_on1);
+                            //ivDoorLockDB.setImageResource(R.drawable.btlight_on1);
                             dbOutStatus.child("door").child("d1").setValue(1);
                         }catch (Exception e){
                             Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();

@@ -1,6 +1,7 @@
 package com.example.apphomemanager;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,7 @@ public class WaterTankActivity extends AppCompatActivity {
     private TextView tvLevelHWT;
     private TextView tvLevelWT;
     private TextView tvLevelLWT;
+    private TextView tvDeviceHWT;
 
     private ImageView ivSetupWT;
     private ImageView ivBackWT;
@@ -57,6 +59,7 @@ public class WaterTankActivity extends AppCompatActivity {
         tvLevelHWT = (TextView) findViewById(R.id.tvLevelHWT);
         tvLevelWT = (TextView) findViewById(R.id.tvLevelWT);
         tvLevelLWT = (TextView) findViewById(R.id.tvLevelLWT);
+        tvDeviceHWT = (TextView) findViewById(R.id.tvDeviceHWT);
 
         ivSetupWT = (ImageView) findViewById(R.id.ivSetupWT);
         ivBackWT = (ImageView) findViewById(R.id.ivBackWT);
@@ -145,6 +148,9 @@ public class WaterTankActivity extends AppCompatActivity {
         tvLevelHWT.setText(getString(R.string.nivel) + " " + getString(R.string.sup) + ": " + datasReservoir.getLh());
         tvLevelLWT.setText(getString(R.string.nivel) + " " + getString(R.string.inf) + ": " + datasReservoir.getLl());
         tvLevelWT.setText(getString(R.string.nivel) + " " + getString(R.string.atual) + ": " + datasReservoir.getLevel());
+        tvDeviceHWT.setText(constants.getDeviceType()[mode] + " " +(datasReservoir.getSx1() == 0 ? getString(R.string.desligada) : getString(R.string.ligada)));
+
+        tvDeviceHWT.setTextColor(datasReservoir.getSx1() == 0 ? Color.RED : Color.GREEN);
 
         skbModeWT.setProgress(datasReservoir.getX1s() == 2 ? constants.getHIGH() : datasReservoir.getX1s() == 1 ? constants.getAUTO() : constants.getLOW());
 

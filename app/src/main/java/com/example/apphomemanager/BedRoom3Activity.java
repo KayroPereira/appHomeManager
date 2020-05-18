@@ -87,7 +87,7 @@ public class BedRoom3Activity extends AppCompatActivity {
         powerDevice.add(ivPower6);
         powerDevice.add(ivPower7);
 
-        TYPE_DEVICE = constants.getBEEDROOM3();
+        TYPE_DEVICE = constants.getBEDROOM3();
         //realizar as modificações até aqui
 
         pgBar.setVisibility(View.VISIBLE);

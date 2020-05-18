@@ -11,15 +11,18 @@ public class ConstantsApp {
 
     final int LIVING = 0;
     final int KITCHEN = 1;
-    final int BEEDROOM1 = 2;
-    final int BEEDROOM2 = 3;
-    final int BEEDROOM3 = 4;
-    final int BEEDROOM4 = 5;
+    final int BEDROOM1 = 2;
+    final int BEDROOM2 = 3;
+    final int BEDROOM3 = 4;
+    final int BEDROOM4 = 5;
+    final int BATHDROOM1 = 6;
+    final int BATHDROOM2 = 7;
+    final int HALL = 8;
 
     final int LIGHT = 0;
     final int POWER = 1;
 
-    final String pathComodo[] = {"living", "kitchen", "beedroom1", "beedroom2", "beedroom3", "beedroom4"};
+    final String pathComodo[] = {"living", "kitchen", "bedroom1", "bedroom2", "bedroom3", "bedroom4", "bathroom1", "bathroom2", "hall"};
     final String pathComodoOutType[] = {"/l", "/p"};
     final String pathComodoOut[] = {"/o1", "/o2", "/o3", "/o4", "/o5", "/o6", "/o7", "/o8", "/o9", "/o10", "/o11", "/o12", "/o13", "/o14", "/o15", "/o16" };
 
@@ -41,25 +44,39 @@ public class ConstantsApp {
     final String pathErr = "/err";
     final String pathLevel = "/level";
 
+    final String deviceType[] = {"Bomba", "Válvula"};
+
     final String imagePath[] = {"ct", "wt"};
     final int imageLength = 20;
 
     final String erros[] = {"erro1", "erro2", "erro3"};
 
-    public int getBEEDROOM1() {
-        return BEEDROOM1;
+    public int getHALL() {
+        return HALL;
     }
 
-    public int getBEEDROOM2() {
-        return BEEDROOM2;
+    public int getBEDROOM1() {
+        return BEDROOM1;
     }
 
-    public int getBEEDROOM3() {
-        return BEEDROOM3;
+    public int getBEDROOM2() {
+        return BEDROOM2;
     }
 
-    public int getBEEDROOM4() {
-        return BEEDROOM4;
+    public int getBEDROOM3() {
+        return BEDROOM3;
+    }
+
+    public int getBEDROOM4() {
+        return BEDROOM4;
+    }
+
+    public int getBATHDROOM1() {
+        return BATHDROOM1;
+    }
+
+    public int getBATHDROOM2() {
+        return BATHDROOM2;
     }
 
     public int getLIGHT() {
@@ -128,6 +145,10 @@ public class ConstantsApp {
 
     public int getWATER_TANK() {
         return WATER_TANK;
+    }
+
+    public String[] getDeviceType() {
+        return deviceType;
     }
 
     public int getLOW() {

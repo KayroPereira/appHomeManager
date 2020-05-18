@@ -8,6 +8,9 @@
     <string name="titleBedRoom2">Quarto - 2</string>
     <string name="titleBedRoom3">Quarto - 3</string>
     <string name="titleBedRoom4">Quarto - 4</string>
+    <string name="titleBathRoom1">Banheiro - 1</string>
+    <string name="titleBathRoom2">Banheiro - 2</string>
+    <string name="titleHall">Hall</string>
     <string name="titleConfiguration">Configuração</string>
     <string name="titleDoorLock">Door Lock</string>
     <string name="titleConfigCard">Cadastrar Cartão</string>
@@ -84,11 +87,30 @@
     <string name="t2BDR4">Computador</string>
     <string name="t3BDR4">Abajur</string>
     <string name="t4BDR4">Geral</string>
-    <string name="t5BDR4">Geral</string>
-    <string name="t6BDR4">Geral</string>
-    <string name="t7BDR4">Geral</string>
-    <string name="t8BDR4">Geral</string>
-    <string name="t9BDR4">Geral</string>
+    <string name="t5BDR4">Banheiro</string>
+
+    <!-- lampadas / tomadas Hall-->
+    <string name="l1HALL">Corredor</string>
+    <string name="l2HALL">Área</string>
+
+    <string name="t1HALL">Corredor</string>
+    <string name="t2HALL">Impressora</string>
+    <string name="t3HALL">Roteador</string>
+    <string name="t4HALL">Geral</string>
+    <string name="t5HALL">Geral</string>
+    <string name="t6HALL">Geral</string>
+
+    <!-- lampadas / tomadas Banheiro1-->
+    <string name="l1BTR1">Principal</string>
+    <string name="l2BTR1">Chuveiro</string>
+
+    <string name="t1BTR1">Geral</string>
+
+    <!-- lampadas / tomadas Banheiro2-->
+    <string name="l1BTR2">Principal</string>
+    <string name="l2BTR2">Chuveiro</string>
+
+    <string name="t1BTR2">Geral</string>
 
     <!-- status -->
     <string name="status">Status</string>
@@ -147,6 +169,8 @@
     <string name="on">L</string>
     <string name="auto">Auto</string>
     <string name="atual">Atual</string>
+    <string name="ligada">Ligada</string>
+    <string name="desligada">Desligada</string>
 
     <!-- dash board -->
     <string name="reservatorio">Reservatório</string>
