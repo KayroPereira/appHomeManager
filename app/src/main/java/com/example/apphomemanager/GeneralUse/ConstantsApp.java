@@ -14,11 +14,12 @@ public class ConstantsApp {
     final int BEEDROOM1 = 2;
     final int BEEDROOM2 = 3;
     final int BEEDROOM3 = 4;
+    final int BEEDROOM4 = 5;
 
     final int LIGHT = 0;
     final int POWER = 1;
 
-    final String pathComodo[] = {"living", "kitchen", "beedroom1", "beedroom2", "beedroom3"};
+    final String pathComodo[] = {"living", "kitchen", "beedroom1", "beedroom2", "beedroom3", "beedroom4"};
     final String pathComodoOutType[] = {"/l", "/p"};
     final String pathComodoOut[] = {"/o1", "/o2", "/o3", "/o4", "/o5", "/o6", "/o7", "/o8", "/o9", "/o10", "/o11", "/o12", "/o13", "/o14", "/o15", "/o16" };
 
@@ -55,6 +56,10 @@ public class ConstantsApp {
 
     public int getBEEDROOM3() {
         return BEEDROOM3;
+    }
+
+    public int getBEEDROOM4() {
+        return BEEDROOM4;
     }
 
     public int getLIGHT() {

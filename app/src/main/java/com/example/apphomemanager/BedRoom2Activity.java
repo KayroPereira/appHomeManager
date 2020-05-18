@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class BeedRoom1Activity extends AppCompatActivity {
+public class BedRoom2Activity extends AppCompatActivity {
     private ViewGroup vgPrincipal;
     private ProgressBar pgBar;
     private ImageView ivLightOnOff;
@@ -56,26 +56,26 @@ public class BeedRoom1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beed_room1);
+        setContentView(R.layout.activity_bed_room2);
 
         //zona de adaptação para outros ambientes
-        vgPrincipal = (ViewGroup) findViewById(R.id.ctnlPrincipalBDR1);
+        vgPrincipal = (ViewGroup) findViewById(R.id.ctnlPrincipalBDR2);
 
-        pgBar = (ProgressBar) findViewById(R.id.pgBarCommBDR1);
+        pgBar = (ProgressBar) findViewById(R.id.pgBarCommBDR2);
 
-        ivLightOnOff = (ImageView) findViewById(R.id.ivOnOffBDR1);
+        ivLightOnOff = (ImageView) findViewById(R.id.ivOnOffBDR2);
 
-        ivBack = (ImageView) findViewById(R.id.ivBackBDR1);
+        ivBack = (ImageView) findViewById(R.id.ivBackBDR2);
 
-        ivLight1 = (ImageView) findViewById(R.id.ivLight1BDR1);
+        ivLight1 = (ImageView) findViewById(R.id.ivLight1BDR2);
 
-        ivPower1 = (ImageView) findViewById(R.id.ivPower1BDR1);
-        ivPower2 = (ImageView) findViewById(R.id.ivPower2BDR1);
-        ivPower3 = (ImageView) findViewById(R.id.ivPower3BDR1);
-        ivPower4 = (ImageView) findViewById(R.id.ivPower4BDR1);
-        ivPower5 = (ImageView) findViewById(R.id.ivPower5BDR1);
-        ivPower6 = (ImageView) findViewById(R.id.ivPower6BDR1);
-        ivPower7 = (ImageView) findViewById(R.id.ivPower7BDR1);
+        ivPower1 = (ImageView) findViewById(R.id.ivPower1BDR2);
+        ivPower2 = (ImageView) findViewById(R.id.ivPower2BDR2);
+        ivPower3 = (ImageView) findViewById(R.id.ivPower3BDR2);
+        ivPower4 = (ImageView) findViewById(R.id.ivPower4BDR2);
+        ivPower5 = (ImageView) findViewById(R.id.ivPower5BDR2);
+        ivPower6 = (ImageView) findViewById(R.id.ivPower6BDR2);
+        ivPower7 = (ImageView) findViewById(R.id.ivPower7BDR2);
 
         lightDevice.add(ivLight1);
 
@@ -87,7 +87,7 @@ public class BeedRoom1Activity extends AppCompatActivity {
         powerDevice.add(ivPower6);
         powerDevice.add(ivPower7);
 
-        TYPE_DEVICE = constants.getBEEDROOM1();
+        TYPE_DEVICE = constants.getBEEDROOM2();
         //realizar as modificações até aqui
 
         pgBar.setVisibility(View.VISIBLE);
@@ -112,7 +112,7 @@ public class BeedRoom1Activity extends AppCompatActivity {
 
                     if (comp instanceof ImageView) {
                         switch (comp.getId()) {
-                            case R.id.ivOnOffBDR1:
+                            case R.id.ivOnOffBDR2:
                                 boolean action = statusComponent.getBtOnOff() == 1 ? false : true;
                                 ivLightOnOff.setImageResource(action ? R.drawable.btoff : R.drawable.bton);
                                 controlComponent(true, 0);
@@ -183,7 +183,7 @@ public class BeedRoom1Activity extends AppCompatActivity {
         return device;
     }
 
-    public void buttonClickedBDR1(View item){
+    public void buttonClicked(View item){
         int device[] = getTypeDevice(item);
 
         switch (device[0]){

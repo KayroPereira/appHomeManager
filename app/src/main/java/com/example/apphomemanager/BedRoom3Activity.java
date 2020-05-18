@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class BeedRoom3Activity extends AppCompatActivity {
+public class BedRoom3Activity extends AppCompatActivity {
     private ViewGroup vgPrincipal;
     private ProgressBar pgBar;
     private ImageView ivLightOnOff;
@@ -56,7 +56,7 @@ public class BeedRoom3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beed_room3);
+        setContentView(R.layout.activity_bed_room3);
 
         //zona de adaptação para outros ambientes
         vgPrincipal = (ViewGroup) findViewById(R.id.ctnlPrincipalBDR3);
@@ -183,7 +183,7 @@ public class BeedRoom3Activity extends AppCompatActivity {
         return device;
     }
 
-    public void buttonClickedBDR3(View item){
+    public void buttonClicked(View item){
         int device[] = getTypeDevice(item);
 
         switch (device[0]){
