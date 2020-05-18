@@ -63,7 +63,7 @@ public class DashBoardControlActivity extends AppCompatActivity {
         ivKitchen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(DashBoardControlActivity.this, KitchenActivity.class);
+                Intent it = new Intent(DashBoardControlActivity.this, KitchenRoomActivity.class);
                 startActivity(it);
             }
         });

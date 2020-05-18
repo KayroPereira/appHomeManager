@@ -14,7 +14,7 @@
     <string name="wifi">Wifi</string>
     <string name="rfid">RFID</string>
 
-    <!-- lampadas -->
+    <!-- lampadas Sala-->
     <string name="l1LVR">Rua</string>
     <string name="l2LVR">Escada</string>
     <string name="l3LVR">Entrada</string>
@@ -22,11 +22,27 @@
     <string name="l5LVR">Sala</string>
     <string name="l6LVR">Bar</string>
 
-    <!-- tomadas -->
+    <!-- tomadas Sala-->
     <string name="t1LVR">Tv</string>
     <string name="t2LVR">Sky</string>
     <string name="t3LVR">Som</string>
     <string name="t4LVR">Geral</string>
+
+    <!-- lampadas Cozinha-->
+    <string name="l1KTR">Principal</string>
+    <string name="l2KTR">Pia</string>
+    <string name="l3KTR">Lavanderia</string>
+
+    <!-- tomadas Cozinha-->
+    <string name="t1KTR">Fogão</string>
+    <string name="t2KTR">Microondas</string>
+    <string name="t3KTR">Geladeira</string>
+    <string name="t4KTR">Máquina</string>
+    <string name="t5KTR">Cafeteira</string>
+    <string name="t6KTR">Liquidificador</string>
+    <string name="t7KTR">Geral</string>
+    <string name="t8KTR">Geral</string>
+    <string name="t9KTR">Geral</string>
 
     <!-- status -->
     <string name="status">Status</string>

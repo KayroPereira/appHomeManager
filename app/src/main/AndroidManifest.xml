@@ -34,7 +34,7 @@
             android:name=".doorLockActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".KitchenActivity"
+            android:name=".KitchenRoomActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".LivingRoomActivity"

@@ -1,8 +1,5 @@
 package com.example.apphomemanager;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.apphomemanager.Communication.CommFirebase;
 import com.example.apphomemanager.GeneralUse.ComponentStatus;
@@ -22,7 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class LivingRoomActivity extends AppCompatActivity {
+public class KitchenRoomActivity extends AppCompatActivity {
+
 
     private ViewGroup vgPrincipal;
     private ProgressBar pgBar;
@@ -33,9 +34,6 @@ public class LivingRoomActivity extends AppCompatActivity {
     private ImageView ivLight1;
     private ImageView ivLight2;
     private ImageView ivLight3;
-    private ImageView ivLight4;
-    private ImageView ivLight5;
-    private ImageView ivLight6;
 
     private ImageView ivPower1;
     private ImageView ivPower2;
@@ -43,6 +41,9 @@ public class LivingRoomActivity extends AppCompatActivity {
     private ImageView ivPower4;
     private ImageView ivPower5;
     private ImageView ivPower6;
+    private ImageView ivPower7;
+    private ImageView ivPower8;
+    private ImageView ivPower9;
 
     private ArrayList<ImageView> lightDevice = new ArrayList<>();
     private ArrayList<ImageView> powerDevice = new ArrayList<>();
@@ -61,37 +62,34 @@ public class LivingRoomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_living_room);
+        setContentView(R.layout.activity_kitchen_room);
 
         //zona de adaptação para outros ambientes
-        vgPrincipal = (ViewGroup) findViewById(R.id.ctnlPrincipalLVR);
+        vgPrincipal = (ViewGroup) findViewById(R.id.ctnlPrincipalKTR);
 
-        pgBar = (ProgressBar) findViewById(R.id.pgBarCommLVR);
+        pgBar = (ProgressBar) findViewById(R.id.pgBarCommKTR);
 
-        ivLightOnOff = (ImageView) findViewById(R.id.ivOnOffLVR);
+        ivLightOnOff = (ImageView) findViewById(R.id.ivOnOffKTR);
 
-        ivBack = (ImageView) findViewById(R.id.ivBackLVR);
+        ivBack = (ImageView) findViewById(R.id.ivBackKTR);
 
-        ivLight1 = (ImageView) findViewById(R.id.ivLight1LVR);
-        ivLight2 = (ImageView) findViewById(R.id.ivLight2LVR);
-        ivLight3 = (ImageView) findViewById(R.id.ivLight3LVR);
-        ivLight4 = (ImageView) findViewById(R.id.ivLight4LVR);
-        ivLight5 = (ImageView) findViewById(R.id.ivLight5LVR);
-        ivLight6 = (ImageView) findViewById(R.id.ivLight6LVR);
+        ivLight1 = (ImageView) findViewById(R.id.ivLight1KTR);
+        ivLight2 = (ImageView) findViewById(R.id.ivLight2KTR);
+        ivLight3 = (ImageView) findViewById(R.id.ivLight3KTR);
 
-        ivPower1 = (ImageView) findViewById(R.id.ivPower1LVR);
-        ivPower2 = (ImageView) findViewById(R.id.ivPower2LVR);
-        ivPower3 = (ImageView) findViewById(R.id.ivPower3LVR);
-        ivPower4 = (ImageView) findViewById(R.id.ivPower4LVR);
-        ivPower5 = (ImageView) findViewById(R.id.ivPower5LVR);
-        ivPower6 = (ImageView) findViewById(R.id.ivPower6LVR);
+        ivPower1 = (ImageView) findViewById(R.id.ivPower1KTR);
+        ivPower2 = (ImageView) findViewById(R.id.ivPower2KTR);
+        ivPower3 = (ImageView) findViewById(R.id.ivPower3KTR);
+        ivPower4 = (ImageView) findViewById(R.id.ivPower4KTR);
+        ivPower5 = (ImageView) findViewById(R.id.ivPower5KTR);
+        ivPower6 = (ImageView) findViewById(R.id.ivPower6KTR);
+        ivPower7 = (ImageView) findViewById(R.id.ivPower7KTR);
+        ivPower8 = (ImageView) findViewById(R.id.ivPower8KTR);
+        ivPower9 = (ImageView) findViewById(R.id.ivPower9KTR);
 
         lightDevice.add(ivLight1);
         lightDevice.add(ivLight2);
         lightDevice.add(ivLight3);
-        lightDevice.add(ivLight4);
-        lightDevice.add(ivLight5);
-        lightDevice.add(ivLight6);
 
         powerDevice.add(ivPower1);
         powerDevice.add(ivPower2);
@@ -99,8 +97,11 @@ public class LivingRoomActivity extends AppCompatActivity {
         powerDevice.add(ivPower4);
         powerDevice.add(ivPower5);
         powerDevice.add(ivPower6);
+        powerDevice.add(ivPower7);
+        powerDevice.add(ivPower8);
+        powerDevice.add(ivPower9);
 
-        TYPE_DEVICE = constants.getLIVING();
+        TYPE_DEVICE = constants.getKITCHEN();
         //realizar as modificações até aqui
 
         pgBar.setVisibility(View.VISIBLE);
@@ -125,7 +126,7 @@ public class LivingRoomActivity extends AppCompatActivity {
 
                     if (comp instanceof ImageView) {
                         switch (comp.getId()) {
-                            case R.id.ivOnOffLVR:
+                            case R.id.ivOnOffKTR:
                                 boolean action = statusComponent.getBtOnOff() == 1 ? false : true;
                                 ivLightOnOff.setImageResource(action ? R.drawable.btoff : R.drawable.bton);
                                 controlComponent(true, 0);
@@ -196,7 +197,7 @@ public class LivingRoomActivity extends AppCompatActivity {
         return device;
     }
 
-    public void buttonClickedLVR(View item){
+    public void buttonClickedKTR(View item){
         int device[] = getTypeDevice(item);
 
         switch (device[0]){
