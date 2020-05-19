@@ -52,7 +52,7 @@
 
                 <ImageView
                     android:id="@+id/ivBackCFG"
-                    android:layout_width="25dp"
+                    android:layout_width="30dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="5dp"
                     android:onClick="buttonClicked"
@@ -84,8 +84,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ctCadastroCFG"
-                    android:layout_width="100dp"
-                    android:layout_height="70dp"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline17"
                     app:layout_constraintEnd_toStartOf="@+id/guideline15"
                     app:layout_constraintStart_toStartOf="parent"
@@ -93,8 +93,8 @@
 
                     <ImageView
                         android:id="@+id/ivCadastroCFG"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -104,9 +104,9 @@
                     <TextView
                         android:id="@+id/tvCadastroCFG"
                         android:layout_width="0dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
                         android:text="@string/cadastrar"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
@@ -119,8 +119,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ctConfWifiCFG"
-                    android:layout_width="100dp"
-                    android:layout_height="70dp"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline17"
                     app:layout_constraintEnd_toStartOf="@+id/guideline16"
                     app:layout_constraintStart_toStartOf="@+id/guideline15"
@@ -128,8 +128,8 @@
 
                     <ImageView
                         android:id="@+id/ivConfWifiCFG"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -139,9 +139,9 @@
                     <TextView
                         android:id="@+id/tvConfWifiCFG"
                         android:layout_width="0dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
                         android:text="@string/wifi"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
@@ -154,8 +154,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ctCardRecordCFG"
-                    android:layout_width="100dp"
-                    android:layout_height="70dp"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline17"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline16"
@@ -163,8 +163,8 @@
 
                     <ImageView
                         android:id="@+id/ivCardRecordCFG"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -174,9 +174,9 @@
                     <TextView
                         android:id="@+id/tvCardRecordCFG"
                         android:layout_width="0dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
                         android:text="@string/rfid"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
@@ -216,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintGuide_percent="0.08"
+                app:layout_constraintGuide_begin="52dp"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_conversion_absoluteHeight="0dp"
                 tools:layout_conversion_absoluteWidth="0dp" />

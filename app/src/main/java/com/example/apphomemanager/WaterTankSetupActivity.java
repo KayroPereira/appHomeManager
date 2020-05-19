@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.apphomemanager.Communication.CommFirebase;
 import com.example.apphomemanager.GeneralUse.ConstantsApp;
@@ -175,6 +177,13 @@ public class WaterTankSetupActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
+    public void hideSoftKeyboard() {
+        if(getCurrentFocus()!=null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+
     public void buttonClicked(View item){
 
         switch (item.getId()){
@@ -185,6 +194,7 @@ public class WaterTankSetupActivity extends AppCompatActivity {
 
             case R.id.ivSendWTS:
                 //Toast.makeText(getApplicationContext(), "btBoxSend On", Toast.LENGTH_SHORT).show();
+                hideSoftKeyboard();
                 btBoxSendClick();
                 break;
         }
@@ -209,6 +219,7 @@ public class WaterTankSetupActivity extends AppCompatActivity {
         }
 
         gate.sendDataInt(dbOutStatus, constants.getPathReservoir()[mode]+"/fcp", 1);
+        Toast.makeText(getApplicationContext(), getString(R.string.msg3), Toast.LENGTH_SHORT).show();
     }
 
     void updateData (WaterTankData data, int mode){

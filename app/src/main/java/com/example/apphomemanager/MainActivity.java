@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -19,12 +20,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-
-//public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    //private FirebaseAuth.AuthStateListener myAuthListener;
 
     private ProgressBar pBar;
     private EditText login;
@@ -36,14 +34,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //RelativeLayout layoutMain = (RelativeLayout) findViewById(R.id.layoutMain);
+        bTLogin = (Button) findViewById(R.id.btEnviarLGN);
+        login = (EditText) findViewById(R.id.eTSSIDLGN);
+        password = (EditText) findViewById(R.id.eTPasswordLGN);
 
-        bTLogin = (Button) findViewById(R.id.btEnviarDoor);
-        login = (EditText) findViewById(R.id.eTSSID);
-        password = (EditText) findViewById(R.id.eTPassword);
-
-        pBar = (ProgressBar) findViewById(R.id.pBarDoor);
-        //pBar.setVisibility(View.INVISIBLE);
+        pBar = (ProgressBar) findViewById(R.id.pBarLGN);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -71,13 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
                 //remover
                 Intent it = new Intent(MainActivity.this, DashBoardActivity.class);
-                //Bundle bundle = new Bundle();
-                //bundle.putInt("mode", new ConstantsApp().getCISTERN());
-                //Intent it = new Intent(MainActivity.this, WaterTankSetupActivity.class);
-                //Intent it = new Intent(MainActivity.this, WaterTankActivity.class);
-                //it.putExtra("mode", new ConstantsApp().getCISTERN());
-                //it.putExtra("mode", new ConstantsApp().getWATER_TANK());
-                //it.putExtra("mode", 0);
                 startActivity(it);
 
                 //habilitar
@@ -111,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getLogin(String login, String password){
 
+        hideSoftKeyboard();
         componentControl(false);
 
         if (TextUtils.isEmpty(login)) {
@@ -118,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             componentControl(true);
             return;
         }
+
         if (TextUtils.isEmpty(password)) {
             Toast.makeText(getApplicationContext(), R.string.fvSenha, Toast.LENGTH_LONG).show();
             componentControl(true);
@@ -131,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!task.isSuccessful()) {
                     Log.w("AUTH", "Falha ao efetuar o login: ", task.getException());
 
-                    Toast.makeText(getApplicationContext(), "Uusuário não encontrado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.userNOK), Toast.LENGTH_SHORT).show();
                 }else{
                     Log.d("AUTH", "Login Efetuado com sucesso!!!");
 
@@ -141,11 +131,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         componentControl(true);
-/*
-        Intent it = new Intent(MainActivity.this, DashBoardActivity.class);
-        //Intent it = new Intent(MainActivity.this, lightActivity.class);
-        startActivity(it);
-*/
     }
 
     @Override
@@ -154,7 +139,13 @@ public class MainActivity extends AppCompatActivity {
 
         login.setText("");
         password.setText("");
-        //login.requestFocus();
+    }
+
+    public void hideSoftKeyboard() {
+        if(getCurrentFocus()!=null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
     }
 /*
     @Override

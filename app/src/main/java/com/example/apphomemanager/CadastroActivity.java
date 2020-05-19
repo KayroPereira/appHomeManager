@@ -3,12 +3,15 @@ package com.example.apphomemanager;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -27,7 +30,9 @@ public class CadastroActivity extends AppCompatActivity {
 
     private ProgressBar pBar;
 
-    private Button btCadastrar;
+    private ImageView ivSend;
+
+    //private Button btCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,29 +41,36 @@ public class CadastroActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        eTLogin = (EditText) findViewById(R.id.eTSSID);
-        eTPassword = (EditText) findViewById(R.id.eTPassword);
-        geteTPasswordConfirm = (EditText) findViewById(R.id.eTPasswordConfirm);
+        eTLogin = (EditText) findViewById(R.id.eTSSIDCDT);
+        eTPassword = (EditText) findViewById(R.id.eTPasswordCDT);
+        geteTPasswordConfirm = (EditText) findViewById(R.id.eTPasswordConfirmCDT);
 
-        pBar = (ProgressBar) findViewById(R.id.pBarDoor);
+        pBar = (ProgressBar) findViewById(R.id.pBarCDT);
 
-        btCadastrar = (Button) findViewById(R.id.btEnviarDoor);
+        ivSend = (ImageView) findViewById(R.id.ivSendCDT);
 
+        //btCadastrar = (Button) findViewById(R.id.btEnviarDoor);
+
+        /*
         btCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 registerUser();
             }
         });
+
+         */
         componentControl(true);
     }
 
     private void componentControl(boolean status){
         pBar.setVisibility(status ? View.INVISIBLE : View.VISIBLE);
-        btCadastrar.setEnabled(status);
+        //btCadastrar.setEnabled(status);
+        ivSend.setVisibility(status ? View.VISIBLE : View.INVISIBLE);
     }
 
     private void registerUser(){
+        hideSoftKeyboard();
         componentControl(false);
 
         if (TextUtils.isEmpty(eTLogin.getText().toString())) {
@@ -102,6 +114,30 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
+
         componentControl(true);
+        Toast.makeText(getApplicationContext(), "ok", Toast.LENGTH_LONG).show();
+    }
+
+    public void hideSoftKeyboard() {
+        if(getCurrentFocus()!=null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+
+    public void buttonClicked(View item){
+        switch (item.getId()){
+            case R.id.ivBackCDT:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+
+            case R.id.ivSendCDT:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                //finish();
+                registerUser();
+                break;
+        }
     }
 }

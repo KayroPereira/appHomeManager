@@ -36,7 +36,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         ivCardRecordCFG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(ConfigurationActivity.this, NetworkConfigurationActivity.class);
+                Intent it = new Intent(ConfigurationActivity.this, doorLockActivity.class);
                 startActivity(it);
             }
         });
@@ -44,7 +44,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         ivConfWifiCFG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(ConfigurationActivity.this, doorLockActivity.class);
+                Intent it = new Intent(ConfigurationActivity.this, NetworkConfigurationActivity.class);
                 startActivity(it);
             }
         });

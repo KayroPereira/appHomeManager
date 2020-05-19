@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">appHomeManagerV14</string>
-    <string name="networkName">HomeManager</string>
+    <!--<string name="networkName">HomeManager</string>     voltar para esta rede         -->
+    <string name="networkName">NetWifi2</string>
+
+    <!-- NetworkConfiguration -->
+    <string name="conexao">Conexão</string>
+
+    <!--login-->
+    <string name="userNOK">Usuário não encontrado</string>
+
+    <!--mensagens-->
+    <string name="msg1">Favor conectar na rede</string>
+    <string name="msg2">para configurar o dispositivo</string>
+    <string name="msg3">Dados enviados</string>
 
     <string name="titleLiving">Sala</string>
     <string name="titleKitchen">Cozinha</string>

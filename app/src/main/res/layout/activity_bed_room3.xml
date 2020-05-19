@@ -12,7 +12,11 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -28,7 +32,7 @@
 
                 <ImageView
                     android:id="@+id/ivBackBDR3"
-                    android:layout_width="25dp"
+                    android:layout_width="30dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="5dp"
                     android:onClick="buttonClicked"
@@ -126,8 +130,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctLight1BDR3"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineLG2BDR3"
                         app:layout_constraintStart_toStartOf="@+id/guidelineLG1BDR3"
@@ -135,8 +139,8 @@
 
                         <ImageView
                             android:id="@+id/ivLight1BDR3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClicked"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -147,9 +151,9 @@
                         <TextView
                             android:id="@+id/tvLight1BDR3"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/l1BDR3"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -187,8 +191,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower1BDR3"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guidelinePW3BDR3"
                         app:layout_constraintEnd_toStartOf="@+id/guidelinePW1BDR3"
                         app:layout_constraintStart_toStartOf="parent"
@@ -196,8 +200,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower1BDR3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClicked"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -208,9 +212,9 @@
                         <TextView
                             android:id="@+id/tvPower1BDR3"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t1BDR3"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -223,8 +227,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower2BDR3"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guidelinePW3BDR3"
                         app:layout_constraintEnd_toStartOf="@+id/guidelinePW2BDR3"
                         app:layout_constraintStart_toStartOf="@+id/guidelinePW1BDR3"
@@ -232,8 +236,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower2BDR3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClicked"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -244,9 +248,9 @@
                         <TextView
                             android:id="@+id/tvPower2BDR3"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t2BDR3"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -259,8 +263,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower3BDR3"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guidelinePW3BDR3"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/guidelinePW2BDR3"
@@ -268,8 +272,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower3BDR3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClicked"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -280,9 +284,9 @@
                         <TextView
                             android:id="@+id/tvPower3BDR3"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t3BDR3"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -295,8 +299,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower4BDR3"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline39BDR3"
                         app:layout_constraintEnd_toStartOf="@+id/guidelinePW1BDR3"
                         app:layout_constraintStart_toStartOf="parent"
@@ -304,8 +308,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower4BDR3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClicked"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -316,9 +320,9 @@
                         <TextView
                             android:id="@+id/tvPower4BDR3"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t4BDR3"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -331,8 +335,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower5BDR3"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline39BDR3"
                         app:layout_constraintEnd_toStartOf="@+id/guidelinePW2BDR3"
                         app:layout_constraintStart_toStartOf="@+id/guidelinePW1BDR3"
@@ -340,8 +344,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower5BDR3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClicked"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -352,9 +356,9 @@
                         <TextView
                             android:id="@+id/tvPower5BDR3"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t5BDR3"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -367,8 +371,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower6BDR3"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline39BDR3"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guidelinePW2BDR3"
@@ -376,8 +380,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower6BDR3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClicked"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -388,9 +392,9 @@
                         <TextView
                             android:id="@+id/tvPower6BDR3"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t6BDR3"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -403,8 +407,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower7BDR3"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/guidelinePW2BDR3"
                         app:layout_constraintStart_toStartOf="@+id/guidelinePW1BDR3"
@@ -412,8 +416,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower7BDR3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClicked"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -424,9 +428,9 @@
                         <TextView
                             android:id="@+id/tvPower7BDR3"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t7BDR3"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -502,7 +506,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.08" />
+                app:layout_constraintGuide_begin="52dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

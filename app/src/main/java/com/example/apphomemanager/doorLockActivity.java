@@ -11,12 +11,14 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.apphomemanager.Communication.HttpService;
 import com.example.apphomemanager.Communication.OnEventListener;
+import com.example.apphomemanager.GeneralUse.ConstantsApp;
 import com.example.apphomemanager.Model.dataNetWork;
 
 import java.util.Timer;
@@ -24,17 +26,26 @@ import java.util.TimerTask;
 
 public class doorLockActivity extends AppCompatActivity {
 
+    final int PROGRESS_BAR_CONTROLE    = 1;
+    final int SEND_CONTROLE    = 2;
+    final int ALL_CONTROLE    = 3;
+
+    final long DELAY_START = 0;
+    final long DELAY_PERIOD = 1000;
+
     private TextView tvSSIDDoor;
 
     private ProgressBar pBarDoor;
 
-    private Button btEnviarDoor;
+    //private Button btEnviarDoor;
+
+    private ImageView ivSend;
 
     private Context context;
 
     private Timer timer;
 
-    private static String URL_BOARD = "http://172.42.1.42/";
+    private String URL_BOARD;
 
     @Override
     protected void onResume() {
@@ -62,12 +73,16 @@ public class doorLockActivity extends AppCompatActivity {
 
         context = this;
 
+        URL_BOARD = new ConstantsApp().getURL_BOARD();
+
         pBarDoor = (ProgressBar) findViewById(R.id.pBarDoor);
-        btEnviarDoor = (Button) findViewById(R.id.btEnviarDoor);
+        //btEnviarDoor = (Button) findViewById(R.id.btEnviarDoor);
 
         tvSSIDDoor = (TextView) findViewById(R.id.tvSSIDDoor);
 
-        componentControl(true, 3);
+        ivSend = (ImageView) findViewById(R.id.ivSendDLK);
+
+        componentControl(true, ALL_CONTROLE);
 
         if (timer == null){
             timer = new Timer();
@@ -75,16 +90,18 @@ public class doorLockActivity extends AppCompatActivity {
 
         Timer();
 
+        /*
         btEnviarDoor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cardRecord();
             }
         });
+        */
     }
 
     private void cardRecord(){
-        componentControl(false, 3);
+        componentControl(false, ALL_CONTROLE);
         HttpService httpService = new HttpService(new dataNetWork(URL_BOARD,"cardRecord", "",
                 "", "", ""), new OnEventListener<dataNetWork>() {
             @Override
@@ -96,32 +113,49 @@ public class doorLockActivity extends AppCompatActivity {
                 }catch (Exception e){
 
                 }
-                componentControl(true, 3);
+                componentControl(true, ALL_CONTROLE);
             }
 
             @Override
             public void onFailure(Exception e) {
-                componentControl(true, 3);
+                componentControl(true, ALL_CONTROLE);
                 Toast.makeText(getApplicationContext(), R.string.networkError, Toast.LENGTH_LONG).show();
             }
         });
         httpService.execute();
     }
 
+    public void buttonClicked(View item){
+        switch (item.getId()){
+            case R.id.ivBackDLK:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+
+            case R.id.ivSendDLK:
+                //Toast.makeText(getApplicationContext(), "btBoxBack On", Toast.LENGTH_SHORT).show();
+                //finish();
+                cardRecord();
+                break;
+        }
+    }
+
+
     private void componentControl (boolean status, int mode){
 
         switch(mode){
-            case 1:
+            case PROGRESS_BAR_CONTROLE:
                 pBarDoor.setVisibility(status ? View.VISIBLE : View.INVISIBLE);
                 break;
 
-            case 2:
-                btEnviarDoor.setEnabled(status);
+            case SEND_CONTROLE:
+                //btEnviarDoor.setEnabled(status);
+                ivSend.setVisibility(status ? View.VISIBLE : View.INVISIBLE);
                 break;
 
-            case 3:
-                componentControl(!status, 1);
-                componentControl(status, 2);
+            case ALL_CONTROLE:
+                componentControl(!status, PROGRESS_BAR_CONTROLE);
+                componentControl(status, SEND_CONTROLE);
                 break;
         }
     }
@@ -146,7 +180,7 @@ public class doorLockActivity extends AppCompatActivity {
     public void Timer(){
         doorLockActivity.Task task = new doorLockActivity.Task();
 
-        timer.schedule(task, 0, 1000);
+        timer.schedule(task, DELAY_START, DELAY_PERIOD);
     }
 
     class Task extends TimerTask {
@@ -163,16 +197,14 @@ public class doorLockActivity extends AppCompatActivity {
                         else
                             tvSSIDDoor.setTextColor(Color.RED);
 
-                        tvSSIDDoor.setText(getString(R.string.ssid) + " " + getConnection());
+                        //tvSSIDDoor.setText(getString(R.string.ssid) + " " + getConnection());
+                        tvSSIDDoor.setText(getString(R.string.ssid) + " " + network);
 
                         if (!network.equals(getString(R.string.networkName))) {
-                            componentControl(false, 2);
-                            new AlertDialog.Builder(context)
-                                    .setTitle("Conexão")
-                                    .setMessage("Favor conectar na rede " + getString(R.string.networkName) + " para configurar o dispositivo")
-                                    .show();
+                            componentControl(false, SEND_CONTROLE);
+                            new AlertDialog.Builder(context).setTitle(getString(R.string.conexao)).setMessage(getString(R.string.msg1) + " " + getString(R.string.networkName) + " " + getString(R.string.msg2)).show();
                         }else
-                            componentControl(true, 2);
+                            componentControl(true, SEND_CONTROLE);
                     }
                 }
             });

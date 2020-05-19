@@ -13,7 +13,11 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -30,7 +34,7 @@
 
                 <ImageView
                     android:id="@+id/ivBackLVR"
-                    android:layout_width="25dp"
+                    android:layout_width="30dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="5dp"
                     android:onClick="buttonClickedLVR"
@@ -64,13 +68,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="1.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.08" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ctnlPrincipalLVR"
@@ -136,8 +133,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctLight1LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline23LVR"
                         app:layout_constraintEnd_toStartOf="@+id/guideline22"
                         app:layout_constraintStart_toStartOf="parent"
@@ -145,8 +142,8 @@
 
                         <ImageView
                             android:id="@+id/ivLight1LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -157,9 +154,9 @@
                         <TextView
                             android:id="@+id/tvLight1LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/l1LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -172,8 +169,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctLight2LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline23LVR"
                         app:layout_constraintEnd_toStartOf="@+id/guideline23"
                         app:layout_constraintStart_toStartOf="@+id/guideline22"
@@ -181,8 +178,8 @@
 
                         <ImageView
                             android:id="@+id/ivLight2LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -193,9 +190,9 @@
                         <TextView
                             android:id="@+id/tvLight2LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/l2LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -208,8 +205,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctLight3LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline23LVR"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guideline23"
@@ -217,8 +214,8 @@
 
                         <ImageView
                             android:id="@+id/ivLight3LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -229,9 +226,9 @@
                         <TextView
                             android:id="@+id/tvLight3LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/l3LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -244,8 +241,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctLight4LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/guideline22"
                         app:layout_constraintStart_toStartOf="parent"
@@ -253,8 +250,8 @@
 
                         <ImageView
                             android:id="@+id/ivLight4LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -265,9 +262,9 @@
                         <TextView
                             android:id="@+id/tvLight4LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/l4LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -280,8 +277,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctLight5LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/guideline23"
                         app:layout_constraintStart_toStartOf="@+id/guideline22"
@@ -289,8 +286,8 @@
 
                         <ImageView
                             android:id="@+id/ivLight5LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -301,9 +298,9 @@
                         <TextView
                             android:id="@+id/tvLight5LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/l5LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -316,8 +313,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctLight6LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guideline23"
@@ -325,8 +322,8 @@
 
                         <ImageView
                             android:id="@+id/ivLight6LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -337,9 +334,9 @@
                         <TextView
                             android:id="@+id/tvLight6LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/l6LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -392,8 +389,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower1LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline25LVR"
                         app:layout_constraintEnd_toStartOf="@+id/guideline24"
                         app:layout_constraintStart_toStartOf="parent"
@@ -401,8 +398,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower1LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -413,9 +410,9 @@
                         <TextView
                             android:id="@+id/tvPower1LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t1LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -428,8 +425,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower2LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline25LVR"
                         app:layout_constraintEnd_toStartOf="@+id/guideline25"
                         app:layout_constraintStart_toStartOf="@+id/guideline24"
@@ -437,8 +434,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower2LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -449,9 +446,9 @@
                         <TextView
                             android:id="@+id/tvPower2LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t2LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -464,8 +461,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower3LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline25LVR"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guideline25"
@@ -473,8 +470,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower3LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -485,9 +482,9 @@
                         <TextView
                             android:id="@+id/tvPower3LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t3LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -500,8 +497,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower4LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/guideline24"
                         app:layout_constraintStart_toStartOf="parent"
@@ -509,8 +506,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower4LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -521,9 +518,9 @@
                         <TextView
                             android:id="@+id/tvPower4LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t4LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -536,8 +533,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower5LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/guideline25"
                         app:layout_constraintStart_toStartOf="@+id/guideline24"
@@ -545,8 +542,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower5LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -557,9 +554,9 @@
                         <TextView
                             android:id="@+id/tvPower5LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t4LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -572,8 +569,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/ctPower6LVR"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guideline25"
@@ -581,8 +578,8 @@
 
                         <ImageView
                             android:id="@+id/ivPower6LVR"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:onClick="buttonClickedLVR"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -593,9 +590,9 @@
                         <TextView
                             android:id="@+id/tvPower6LVR"
                             android:layout_width="0dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:text="@string/t4LVR"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -654,9 +651,9 @@
                             <TextView
                                 android:id="@+id/tv"
                                 android:layout_width="0dp"
-                                android:layout_height="25dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginBottom="5dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginBottom="0dp"
                                 android:text="@string/titleBedRoom2"
                                 android:textAlignment="center"
                                 android:textColor="@android:color/background_light"
@@ -686,6 +683,13 @@
                     app:layout_constraintGuide_percent="0.8" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="52dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -2,6 +2,8 @@ package com.example.apphomemanager.GeneralUse;
 
 public class ConstantsApp {
 
+    final String URL_BOARD = "http://172.42.1.42/";
+
     final int CISTERN = 0;
     final int WATER_TANK = 1;
 
@@ -31,7 +33,7 @@ public class ConstantsApp {
     final String pathImageDevicePower[] = {"tomadaoff", "tomadaon"};
 
     final String climaStatus[] = {"storm", "snow", "hail", "rain", "fog", "clear_day", "clear_night", "cloud", "cloudly_day", "cloudly_night", "none_day", "none_night"};
-    final String climaImages[] = {"storm", "snow", "snow", "rain", "fog", "clear_day", "clear_night", "cloudly_day", "cloudly_day", "cloudly_night", "none_day", "none_night"};
+    final String climaImages[] = {"storm", "snow", "snow", "rain", "cloud", "clear_day", "clear_night", "cloud", "cloudly_day", "cloudly_night", "none_day", "none_night"};
 
     final String temperaturaImages[] = {"tlow", "taverage", "thigh"};
 
@@ -50,6 +52,11 @@ public class ConstantsApp {
     final int imageLength = 20;
 
     final String erros[] = {"erro1", "erro2", "erro3"};
+
+
+    public String getURL_BOARD() {
+        return URL_BOARD;
+    }
 
     public int getHALL() {
         return HALL;
