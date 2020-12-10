@@ -422,7 +422,8 @@
                         app:layout_constraintBottom_toTopOf="@+id/guideline9"
                         app:layout_constraintEnd_toStartOf="@+id/guideline5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:visibility="gone">
 
                         <ImageView
                             android:id="@+id/ivDoorLockDB"
