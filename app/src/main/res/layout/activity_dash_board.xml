@@ -66,6 +66,55 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/guideline42"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline46">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/guideline47">
+
+                        <ImageView
+                            android:id="@+id/ivBuyListInfDB"
+                            android:layout_width="40dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/myliston" />
+
+                        <TextView
+                            android:id="@+id/tvBuyListInfDB"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="left|center_vertical"
+                            android:text="@string/msgLstComprasPendente"
+                            android:textColor="@color/colorFontItem"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivBuyListInfDB"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline47"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.75" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout16"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -388,7 +437,7 @@
                         <TextView
                             android:id="@+id/tvDoorLockDB"
                             android:layout_width="0dp"
-                            android:layout_height="20dp"
+                            android:layout_height="25dp"
                             android:text="@string/titleDoorLock"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -421,7 +470,7 @@
                         <TextView
                             android:id="@+id/tvControlDB"
                             android:layout_width="0dp"
-                            android:layout_height="20dp"
+                            android:layout_height="25dp"
                             android:text="@string/controle"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -454,12 +503,45 @@
                         <TextView
                             android:id="@+id/tvReservoirDB"
                             android:layout_width="0dp"
-                            android:layout_height="20dp"
+                            android:layout_height="25dp"
                             android:text="@string/utilitarios"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
                             android:textSize="16sp"
                             app:layout_constraintBottom_toTopOf="@+id/ivReservoirDB"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ctBuyListDB"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/guideline9">
+
+                        <ImageView
+                            android:id="@+id/ivBuyListDB"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvBuyListDB"
+                            app:srcCompat="@drawable/buylist" />
+
+                        <TextView
+                            android:id="@+id/tvBuyListDB"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:text="@string/msgCompras"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toTopOf="@+id/ivBuyListDB"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -487,7 +569,7 @@
                         <TextView
                             android:id="@+id/tvSetupDB"
                             android:layout_width="0dp"
-                            android:layout_height="20dp"
+                            android:layout_height="25dp"
                             android:text="@string/titleConfiguration"
                             android:textAlignment="center"
                             android:textColor="@android:color/background_light"
@@ -534,6 +616,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.7" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

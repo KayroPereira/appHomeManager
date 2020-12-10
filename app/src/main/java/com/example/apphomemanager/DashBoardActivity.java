@@ -15,6 +15,7 @@ import com.example.apphomemanager.GeneralUse.ConstantsApp;
 import com.example.apphomemanager.Localizacao.Clima;
 import com.example.apphomemanager.Localizacao.DownloadJsonAsyncTask;
 import com.example.apphomemanager.Localizacao.Localizacao;
+import com.example.apphomemanager.listacompras.BuyListActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationAvailability;
 import com.google.android.gms.location.LocationCallback;
@@ -60,6 +61,7 @@ public class DashBoardActivity extends AppCompatActivity {
     private ImageView ivDoorLockDB;
     private ImageView ivControlDB;
     private ImageView ivReservoirDB;
+    private ImageView ivBuyListDB;
     private ImageView ivSetupDB;
     private ImageView ivRefreshDB;
     private ImageView ivClima;
@@ -67,6 +69,7 @@ public class DashBoardActivity extends AppCompatActivity {
     private ImageView ivClima1;
     private ImageView ivClima2;
     private ImageView ivClima3;
+    private ImageView ivBuyListInfDB;
 
     private TextView tvCidade;
     private TextView tvTempUmid;
@@ -77,6 +80,7 @@ public class DashBoardActivity extends AppCompatActivity {
     private TextView tvTempH_L2;
     private TextView tvDay3;
     private TextView tvTempH_L3;
+    private TextView tvBuyListInfDB;
 
     private boolean requestingLocationUpdates = false;
     private Localizacao localizacao = new Localizacao();
@@ -103,6 +107,8 @@ public class DashBoardActivity extends AppCompatActivity {
         ivClima1 = (ImageView) findViewById(R.id.ivClima1);
         ivClima2 = (ImageView) findViewById(R.id.ivClima2);
         ivClima3 = (ImageView) findViewById(R.id.ivClima3);
+        ivBuyListDB = (ImageView) findViewById(R.id.ivBuyListDB);
+        ivBuyListInfDB = (ImageView) findViewById(R.id.ivBuyListInfDB);
 
         tvCidade = (TextView) findViewById(R.id.tvCidade);
         tvTempUmid = (TextView) findViewById(R.id.tvTempUmid);
@@ -113,6 +119,9 @@ public class DashBoardActivity extends AppCompatActivity {
         tvTempH_L2 = (TextView) findViewById(R.id.tvTempH_L2);
         tvDay3 = (TextView) findViewById(R.id.tvDay3);
         tvTempH_L3 = (TextView) findViewById(R.id.tvTempH_L3);
+        tvBuyListInfDB = (TextView) findViewById(R.id.tvBuyListInfDB);
+
+        hideBuyList(false);
 
         setStatusComponentes(false);
 
@@ -144,7 +153,7 @@ public class DashBoardActivity extends AppCompatActivity {
                 super.onLocationAvailability(avail);
 
                 //testa se a localização esta habilitada
-                if (!avail.isLocationAvailable()){
+                if (!avail.isLocationAvailable()) {
                     Toast.makeText(getApplicationContext(), "Habilite a localização para utilizar todas as funcionalidades", Toast.LENGTH_LONG).show();
                 }
             }
@@ -174,6 +183,14 @@ public class DashBoardActivity extends AppCompatActivity {
             }
         });
 
+        ivBuyListDB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(DashBoardActivity.this, BuyListActivity.class);
+                startActivity(it);
+            }
+        });
+
         ivDoorLockDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -182,10 +199,10 @@ public class DashBoardActivity extends AppCompatActivity {
                 builder.setMessage("Deseja abrir a porta de entrada?");
                 builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
-                        try{
+                        try {
                             //ivDoorLockDB.setImageResource(R.drawable.btlight_on1);
                             dbOutStatus.child("door").child("d1").setValue(1);
-                        }catch (Exception e){
+                        } catch (Exception e) {
                             Toast.makeText(getApplicationContext(), "Não foi possível obter os dados", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -206,6 +223,11 @@ public class DashBoardActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //get status component ivDoorLok in firebase
                 ivDoorLockDB.setImageResource(new CommFirebase().getComponentStatus(dataSnapshot, "door", "d1") == 0 ? R.drawable.door : R.drawable.dooron1);
+
+                if (new CommFirebase().isPathEmpt(dataSnapshot, new com.example.apphomemanager.listacompras.ConstantsApp().getPathMinhaLista()) > 0)
+                    hideBuyList(true);
+                else
+                    hideBuyList(false);
             }
 
             @Override
@@ -215,16 +237,26 @@ public class DashBoardActivity extends AppCompatActivity {
         });
     }
 
-    void iniciarLocalizacao(){
+    private void hideBuyList(boolean value) {
+        if (value) {
+            ivBuyListInfDB.setVisibility(View.VISIBLE);
+            tvBuyListInfDB.setVisibility(View.VISIBLE);
+        } else {
+            ivBuyListInfDB.setVisibility(View.INVISIBLE);
+            tvBuyListInfDB.setVisibility(View.INVISIBLE);
+        }
+
+    }
+
+    void iniciarLocalizacao() {
         pedirPermissoes();
         createLocationRequest();
     }
 
-    public void buttonClickedDB(View item){
+    public void buttonClickedDB(View item) {
         if (requestingLocationUpdates) {
             onPause();
-        }
-        else {
+        } else {
             startLocationUpdates();
         }
     }
@@ -255,6 +287,16 @@ public class DashBoardActivity extends AppCompatActivity {
     }
 
     private void startLocationUpdates() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null);
         requestingLocationUpdates = true;
     }
@@ -268,8 +310,8 @@ public class DashBoardActivity extends AppCompatActivity {
         locationRequest = LocationRequest.create();
         locationRequest.setInterval(5000);
         //locationRequest.setFastestInterval(15000);
-        //locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY); //verificar a possibilidade de conexão por outras redes
-        locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY); //verificar a possibilidade de conexão por outras redes
+        //locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);        //funcionado
     }
 
     private void updateData(Location location){
@@ -354,7 +396,6 @@ public class DashBoardActivity extends AppCompatActivity {
     }
 
     private void setStatusComponentes(boolean status){
-
         if (status)
             constraintLayout10.setVisibility(View.VISIBLE);
         else

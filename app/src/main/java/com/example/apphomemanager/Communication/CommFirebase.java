@@ -6,13 +6,17 @@ import androidx.core.util.LogWriter;
 
 import com.example.apphomemanager.GeneralUse.ComponentStatus;
 import com.example.apphomemanager.GeneralUse.WaterTankData;
+import com.example.apphomemanager.listacompras.ConstantsApp;
+import com.example.apphomemanager.listacompras.DBProduto;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class CommFirebase {
+
+    private ConstantsApp constant = new ConstantsApp();
 
     public ComponentStatus getOutPut(DataSnapshot dataSnapshot, String room){
         ComponentStatus outPuts = new ComponentStatus();
@@ -98,13 +102,67 @@ public class CommFirebase {
         return data;
     }
 
+    public String getItem(DataSnapshot dataSnapshot, String mode) {
+
+        String item;
+        try {
+            DataSnapshot path = dataSnapshot.child(mode);
+
+            item = path.getValue().toString();
+        }catch (Exception e){
+            return "";
+        }
+        return item;
+    }
+
+    public ArrayList<DBProduto> getListaCompras(DataSnapshot dataSnapshot, String path, int mode) {
+
+        ArrayList<DBProduto> list = new ArrayList<>();
+
+        try {
+            DataSnapshot dataList = dataSnapshot.child(path);
+            for (DataSnapshot temp : dataList.getChildren()) {
+                for (DataSnapshot temp1 : temp.getChildren()) {
+                    if (mode == constant.getFlgDsp())
+                        list.add(new DBProduto(-1, Integer.parseInt(temp.getKey()), temp1.getKey(), (float) 1.0, Integer.parseInt(temp1.getValue().toString()), constant.getStatusOn()));
+                    else{
+                        String value[] = temp1.getValue().toString().split("#");
+                        list.add(new DBProduto(-1, Integer.parseInt(temp.getKey()), temp1.getKey(), Float.parseFloat(value[0]), Integer.parseInt(value[1]), Integer.parseInt(value[2])));
+                    }
+                }
+            }
+        }catch (Exception e){
+            return null;
+        }
+        return list;
+    }
+
+    public int isPathEmpt(DataSnapshot dataSnapshot, String path) {
+
+        int pathEmpt = -1;
+
+        try {
+            DataSnapshot dataPath = dataSnapshot.child(path);
+            pathEmpt = (int) dataPath.getChildrenCount();
+
+            if (pathEmpt > 1)
+                return pathEmpt;
+
+            return 0;
+        }catch (Exception e){
+            return -1;
+        }
+    }
+
     public void sendDataInt(DatabaseReference reference, String path, int value){
-        //dbOutStatus.child("living").child("power").child("out4").setValue(action ? 1 : 0);
-        //dbOutStatus.child("kitchen/l/o1").setValue(8);
         reference.child(path).setValue(value);
     }
 
     public void sendDataString(DatabaseReference reference, String path, String value){
         reference.child(path).setValue(value);
+    }
+
+    public void deleteItem(DatabaseReference reference, String path){
+        reference.child(path).removeValue();
     }
 }
